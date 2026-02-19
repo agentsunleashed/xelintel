@@ -9,941 +9,906 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Nav -->
-    <nav id="topnav">
-        <div class="nav-left">
-            <div class="logo">XELINTEL</div>
-            <span class="tagline">VP of AI · Interview Intelligence</span>
+
+    <!-- HEADER BAR -->
+    <header id="header">
+        <div class="logo">XELINTEL</div>
+        <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchInput" placeholder="Search... (Ctrl+K)" autocomplete="off">
         </div>
-        <div class="nav-center">
-            <div class="search-wrapper">
-                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" placeholder="Search topics... (Ctrl+K)" autocomplete="off">
-                <kbd class="kbd-hint">Ctrl+K</kbd>
-            </div>
-        </div>
-        <div class="nav-right">
-            <button id="expandAll" title="Expand All">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <button id="collapseAll" title="Collapse All">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-            </button>
-        </div>
+    </header>
+
+    <!-- SECTION TABS — always visible -->
+    <nav id="sectionTabs">
+        <button class="section-tab active" data-section="ai-strategy"><span class="tab-icon">🎯</span> Strategy</button>
+        <button class="section-tab" data-section="tech-architecture"><span class="tab-icon">⚙️</span> Architecture</button>
+        <button class="section-tab" data-section="business-impact"><span class="tab-icon">📊</span> Business & ROI</button>
+        <button class="section-tab" data-section="team-org"><span class="tab-icon">👥</span> Team & Org</button>
+        <button class="section-tab" data-section="leadership"><span class="tab-icon">🏛️</span> Leadership</button>
+        <button class="section-tab" data-section="interview-prep"><span class="tab-icon">🎤</span> Interview Q&A</button>
+        <button class="section-tab" data-section="industry-trends"><span class="tab-icon">🔮</span> Trends</button>
+        <button class="section-tab" data-section="tech-deep-dives"><span class="tab-icon">🔬</span> Deep Dives</button>
+        <button class="section-tab" data-section="metrics-kpis"><span class="tab-icon">📈</span> Metrics</button>
     </nav>
 
-    <!-- Sidebar -->
-    <aside id="sidebar">
-        <ul id="sidebarNav"></ul>
-    </aside>
+    <!-- SUB-TOPIC PILLS — change based on active section -->
+    <nav id="subtopicBar"></nav>
 
-    <!-- Main Content -->
-    <main id="content">
+    <!-- CONTENT PANEL — shows one topic at a time -->
+    <main id="contentPanel">
 
-        <!-- SECTION 1: AI Strategy & Vision -->
-        <section class="topic-section" data-section="ai-strategy">
-            <h2 class="section-title" id="ai-strategy">
-                <span class="section-icon">🎯</span> AI Strategy & Vision
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: AI Strategy & Vision
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="enterprise-ai-roadmap">
-                <h3 class="card-title">Enterprise AI Roadmap</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Phases of AI Maturity</h4>
-                        <ol>
-                            <li><strong>Experimentation</strong> — Proof of concepts, small-scale pilots, identify quick wins</li>
-                            <li><strong>Operationalization</strong> — Production ML pipelines, MLOps foundations, governance basics</li>
-                            <li><strong>Scaling</strong> — Platform approach, reusable components, cross-BU deployment</li>
-                            <li><strong>Transformation</strong> — AI-native processes, autonomous decision-making, competitive moat</li>
-                        </ol>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"We need to move from <em>AI experiments</em> to <em>AI-at-scale</em> — that requires platform thinking, not project thinking."</li>
-                            <li>"The roadmap must be business-outcome-driven, not technology-driven."</li>
-                            <li>"Every AI initiative should map to a P&L impact within 12-18 months."</li>
-                            <li>"I structure roadmaps around three horizons: optimize existing, augment capabilities, create new business models."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="ai-strategy" data-topic="enterprise-ai-roadmap" data-label="Enterprise AI Roadmap">
+            <h2>Enterprise AI Roadmap</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Phases of AI Maturity</h3>
+                    <ol>
+                        <li><strong>Experimentation</strong> — Proof of concepts, small-scale pilots, identify quick wins</li>
+                        <li><strong>Operationalization</strong> — Production ML pipelines, MLOps foundations, governance basics</li>
+                        <li><strong>Scaling</strong> — Platform approach, reusable components, cross-BU deployment</li>
+                        <li><strong>Transformation</strong> — AI-native processes, autonomous decision-making, competitive moat</li>
+                    </ol>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"We need to move from <em>AI experiments</em> to <em>AI-at-scale</em> — that requires platform thinking, not project thinking."</li>
+                        <li>"The roadmap must be business-outcome-driven, not technology-driven."</li>
+                        <li>"Every AI initiative should map to a P&L impact within 12-18 months."</li>
+                        <li>"I structure roadmaps around three horizons: optimize existing, augment capabilities, create new business models."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="build-vs-buy-vs-partner">
-                <h3 class="card-title">Build vs. Buy vs. Partner</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Decision Framework</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Factor</th><th>Build</th><th>Buy</th><th>Partner</th></tr></thead>
-                            <tbody>
-                                <tr><td>Core differentiator?</td><td>✅ Yes</td><td>❌ No</td><td>⚠️ Depends</td></tr>
-                                <tr><td>In-house talent?</td><td>✅ Strong</td><td>❌ Limited</td><td>⚠️ Growing</td></tr>
-                                <tr><td>Speed to market</td><td>Slowest</td><td>Fastest</td><td>Medium</td></tr>
-                                <tr><td>Long-term TCO</td><td>Lower</td><td>Higher</td><td>Variable</td></tr>
-                                <tr><td>Data sensitivity</td><td>✅ Full control</td><td>⚠️ Vendor risk</td><td>⚠️ Shared</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Build where AI is the product, buy where AI is a feature, partner where speed-to-value outweighs control."</li>
-                            <li>"I always start with the strategic question: does this capability create defensible differentiation?"</li>
-                            <li>"For Foundation Models, the answer is almost always buy/partner. For domain-specific fine-tuning and data moats — build."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="ai-strategy" data-topic="build-vs-buy" data-label="Build vs Buy vs Partner">
+            <h2>Build vs. Buy vs. Partner</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Decision Framework</h3>
+                    <table>
+                        <thead><tr><th>Factor</th><th>Build</th><th>Buy</th><th>Partner</th></tr></thead>
+                        <tbody>
+                            <tr><td>Core differentiator?</td><td>✅ Yes</td><td>❌ No</td><td>⚠️ Depends</td></tr>
+                            <tr><td>In-house talent?</td><td>✅ Strong</td><td>❌ Limited</td><td>⚠️ Growing</td></tr>
+                            <tr><td>Speed to market</td><td>Slowest</td><td>Fastest</td><td>Medium</td></tr>
+                            <tr><td>Long-term TCO</td><td>Lower</td><td>Higher</td><td>Variable</td></tr>
+                            <tr><td>Data sensitivity</td><td>✅ Full control</td><td>⚠️ Vendor risk</td><td>⚠️ Shared</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Build where AI is the product, buy where AI is a feature, partner where speed-to-value outweighs control."</li>
+                        <li>"I always start with the strategic question: does this capability create defensible differentiation?"</li>
+                        <li>"For Foundation Models — buy/partner. For domain-specific fine-tuning and data moats — build."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="ai-center-of-excellence">
-                <h3 class="card-title">AI Center of Excellence (CoE)</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>CoE Operating Models</h4>
-                        <ul>
-                            <li><strong>Centralized</strong> — Single team, full control, slower deployment velocity</li>
-                            <li><strong>Federated</strong> — BU-embedded teams with central standards, faster but harder governance</li>
-                            <li><strong>Hub-and-Spoke</strong> — Central platform + embedded specialists (recommended at scale)</li>
-                        </ul>
-                        <h4>Core CoE Functions</h4>
-                        <ul>
-                            <li>AI Strategy & Portfolio Management</li>
-                            <li>ML Platform & Infrastructure</li>
-                            <li>Data Science & Engineering Excellence</li>
-                            <li>AI Ethics, Governance & Risk</li>
-                            <li>Talent Development & Community of Practice</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"A CoE that doesn't ship production models within its first 90 days has already failed."</li>
-                            <li>"The goal isn't centralized control — it's democratized capability with centralized governance."</li>
-                            <li>"I prefer hub-and-spoke: central platform team as the force multiplier, domain experts embedded in BUs."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="ai-strategy" data-topic="ai-coe" data-label="AI Center of Excellence">
+            <h2>AI Center of Excellence (CoE)</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>CoE Operating Models</h3>
+                    <ul>
+                        <li><strong>Centralized</strong> — Single team, full control, slower deployment velocity</li>
+                        <li><strong>Federated</strong> — BU-embedded teams with central standards, faster but harder governance</li>
+                        <li><strong>Hub-and-Spoke</strong> — Central platform + embedded specialists (recommended at scale)</li>
+                    </ul>
+                    <h3>Core CoE Functions</h3>
+                    <ul>
+                        <li>AI Strategy & Portfolio Management</li>
+                        <li>ML Platform & Infrastructure</li>
+                        <li>Data Science & Engineering Excellence</li>
+                        <li>AI Ethics, Governance & Risk</li>
+                        <li>Talent Development & Community of Practice</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"A CoE that doesn't ship production models within its first 90 days has already failed."</li>
+                        <li>"The goal isn't centralized control — it's democratized capability with centralized governance."</li>
+                        <li>"I prefer hub-and-spoke: central platform team as the force multiplier, domain experts embedded in BUs."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="responsible-ai">
-                <h3 class="card-title">Responsible AI & Governance</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Responsible AI Pillars</h4>
-                        <ul>
-                            <li><strong>Fairness</strong> — Bias detection, equitable outcomes, demographic parity</li>
-                            <li><strong>Transparency</strong> — Explainability (SHAP, LIME), model cards, decision audit trails</li>
-                            <li><strong>Privacy</strong> — Differential privacy, federated learning, data minimization</li>
-                            <li><strong>Safety</strong> — Red-teaming, guardrails, human-in-the-loop for high-stakes</li>
-                            <li><strong>Accountability</strong> — Clear ownership, AI review boards, incident response</li>
-                        </ul>
-                        <h4>Governance Framework</h4>
-                        <ul>
-                            <li>Risk-tiered model approval (Low / Medium / High / Critical)</li>
-                            <li>Mandatory model documentation (model cards, data sheets)</li>
-                            <li>Continuous monitoring & drift detection</li>
-                            <li>Regular bias audits & fairness assessments</li>
-                            <li>EU AI Act / NIST AI RMF alignment</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Responsible AI isn't a tax on innovation — it's a prerequisite for enterprise trust and scale."</li>
-                            <li>"I implement risk-tiered governance: lightweight for low-risk, rigorous for high-stakes decisions."</li>
-                            <li>"Every model in production needs an owner, a monitor, and a kill switch."</li>
-                            <li>"We must proactively address EU AI Act compliance — it's not a matter of if, but when."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="ai-strategy" data-topic="responsible-ai" data-label="Responsible AI & Governance">
+            <h2>Responsible AI & Governance</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Responsible AI Pillars</h3>
+                    <ul>
+                        <li><strong>Fairness</strong> — Bias detection, equitable outcomes, demographic parity</li>
+                        <li><strong>Transparency</strong> — Explainability (SHAP, LIME), model cards, audit trails</li>
+                        <li><strong>Privacy</strong> — Differential privacy, federated learning, data minimization</li>
+                        <li><strong>Safety</strong> — Red-teaming, guardrails, human-in-the-loop for high-stakes</li>
+                        <li><strong>Accountability</strong> — Clear ownership, AI review boards, incident response</li>
+                    </ul>
+                    <h3>Governance Framework</h3>
+                    <ul>
+                        <li>Risk-tiered model approval (Low / Medium / High / Critical)</li>
+                        <li>Mandatory model documentation (model cards, data sheets)</li>
+                        <li>Continuous monitoring & drift detection</li>
+                        <li>EU AI Act / NIST AI RMF alignment</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Responsible AI isn't a tax on innovation — it's a prerequisite for enterprise trust and scale."</li>
+                        <li>"I implement risk-tiered governance: lightweight for low-risk, rigorous for high-stakes."</li>
+                        <li>"Every model in production needs an owner, a monitor, and a kill switch."</li>
+                        <li>"We must proactively address EU AI Act compliance — not if, but when."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 2: Technical Architecture -->
-        <section class="topic-section" data-section="tech-architecture">
-            <h2 class="section-title" id="tech-architecture">
-                <span class="section-icon">⚙️</span> Technical Architecture & Infrastructure
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Tech Architecture
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="ml-architecture-patterns">
-                <h3 class="card-title">ML Architecture Patterns</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Key Patterns</h4>
-                        <ul>
-                            <li><strong>Batch Prediction Pipeline</strong> — Scheduled scoring, feature store → model → data warehouse</li>
-                            <li><strong>Real-time Serving</strong> — Low-latency inference (gRPC/REST), model caching, A/B routing</li>
-                            <li><strong>Event-Driven ML</strong> — Streaming features (Kafka/Flink), online learning, trigger-based predictions</li>
-                            <li><strong>RAG (Retrieval-Augmented Generation)</strong> — Vector DB + LLM, knowledge grounding, citation chains</li>
-                            <li><strong>Agentic AI</strong> — Tool-using LLMs, multi-step reasoning, orchestration frameworks (LangGraph, AutoGen)</li>
-                            <li><strong>Multi-Modal Pipelines</strong> — Vision + Language + Structured data fusion</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Architecture should be pattern-based, not bespoke — every new model shouldn't require new infrastructure."</li>
-                            <li>"The feature store is the most underinvested, highest-ROI component of any ML platform."</li>
-                            <li>"RAG is the bridge between general-purpose LLMs and enterprise-specific knowledge."</li>
-                            <li>"Agentic AI is the next frontier — but it requires robust guardrails beofre enterprise deployment."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="tech-architecture" data-topic="ml-patterns" data-label="ML Architecture Patterns">
+            <h2>ML Architecture Patterns</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Key Patterns</h3>
+                    <ul>
+                        <li><strong>Batch Prediction</strong> — Scheduled scoring, feature store → model → warehouse</li>
+                        <li><strong>Real-time Serving</strong> — Low-latency inference (gRPC/REST), model caching, A/B routing</li>
+                        <li><strong>Event-Driven ML</strong> — Streaming features (Kafka/Flink), online learning</li>
+                        <li><strong>RAG</strong> — Vector DB + LLM, knowledge grounding, citation chains</li>
+                        <li><strong>Agentic AI</strong> — Tool-using LLMs, multi-step reasoning (LangGraph, AutoGen)</li>
+                        <li><strong>Multi-Modal</strong> — Vision + Language + Structured data fusion</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Architecture should be pattern-based, not bespoke — every new model shouldn't require new infrastructure."</li>
+                        <li>"The feature store is the most underinvested, highest-ROI component of any ML platform."</li>
+                        <li>"RAG is the bridge between general-purpose LLMs and enterprise-specific knowledge."</li>
+                        <li>"Agentic AI is the next frontier — but requires robust guardrails before enterprise deployment."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="mlops">
-                <h3 class="card-title">MLOps & ML Platform</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>MLOps Maturity Levels</h4>
-                        <ol>
-                            <li><strong>Level 0</strong> — Manual, script-based, no CI/CD, Jupyter notebooks in production ❌</li>
-                            <li><strong>Level 1</strong> — Automated training pipelines, basic monitoring, model registry</li>
-                            <li><strong>Level 2</strong> — CI/CD for ML, automated testing, feature stores, experiment tracking</li>
-                            <li><strong>Level 3</strong> — Fully automated, self-healing pipelines, auto-retraining, A/B/canary deployment</li>
-                        </ol>
-                        <h4>Platform Components</h4>
-                        <ul>
-                            <li>Feature Store (Feast, Tecton, Databricks)</li>
-                            <li>Experiment Tracking (MLflow, W&B, Neptune)</li>
-                            <li>Model Registry & Versioning</li>
-                            <li>Training Orchestration (Kubeflow, Vertex AI, SageMaker)</li>
-                            <li>Serving Infrastructure (Triton, TFServing, vLLM, TGI)</li>
-                            <li>Monitoring (Evidently, Whylabs, Arize)</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Most companies are stuck at MLOps Level 0-1. The VP's job is to get the org to Level 2+ within 12 months."</li>
-                            <li>"A model without monitoring is a liability, not an asset."</li>
-                            <li>"The platform should abstract infrastructure complexity so data scientists focus on modeling, not DevOps."</li>
-                            <li>"I measure ML platform success by: time-to-production, model refresh frequency, and developer NPS."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="tech-architecture" data-topic="mlops" data-label="MLOps & ML Platform">
+            <h2>MLOps & ML Platform</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>MLOps Maturity Levels</h3>
+                    <ol>
+                        <li><strong>Level 0</strong> — Manual, Jupyter in production ❌</li>
+                        <li><strong>Level 1</strong> — Automated training, basic monitoring, model registry</li>
+                        <li><strong>Level 2</strong> — CI/CD for ML, feature stores, experiment tracking</li>
+                        <li><strong>Level 3</strong> — Self-healing pipelines, auto-retraining, A/B/canary deploy</li>
+                    </ol>
+                    <h3>Platform Components</h3>
+                    <ul>
+                        <li>Feature Store (Feast, Tecton, Databricks)</li>
+                        <li>Experiment Tracking (MLflow, W&B, Neptune)</li>
+                        <li>Model Registry & Versioning</li>
+                        <li>Training Orchestration (Kubeflow, Vertex, SageMaker)</li>
+                        <li>Serving (Triton, TFServing, vLLM, TGI)</li>
+                        <li>Monitoring (Evidently, Whylabs, Arize)</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Most companies are stuck at Level 0-1. The VP's job is to get to Level 2+ within 12 months."</li>
+                        <li>"A model without monitoring is a liability, not an asset."</li>
+                        <li>"The platform should abstract infra complexity so DS focuses on modeling, not DevOps."</li>
+                        <li>"I measure ML platform by: time-to-production, refresh frequency, and developer NPS."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="genai-llm-strategy">
-                <h3 class="card-title">GenAI & LLM Strategy</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Enterprise LLM Deployment Options</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Approach</th><th>Control</th><th>Cost</th><th>Best For</th></tr></thead>
-                            <tbody>
-                                <tr><td>API (GPT-4, Claude)</td><td>Low</td><td>Per-token</td><td>Rapid prototyping, non-sensitive</td></tr>
-                                <tr><td>Fine-tuned (hosted)</td><td>Medium</td><td>Moderate</td><td>Domain-specific tasks</td></tr>
-                                <tr><td>Self-hosted Open Source</td><td>High</td><td>GPU infra</td><td>Sensitive data, regulatory</td></tr>
-                                <tr><td>Hybrid (routing)</td><td>High</td><td>Optimized</td><td>Cost/quality optimization</td></tr>
-                            </tbody>
-                        </table>
-                        <h4>Key Considerations</h4>
-                        <ul>
-                            <li>Prompt engineering → Fine-tuning → Pre-training (escalation ladder)</li>
-                            <li>Evaluation frameworks: automated benchmarks + human evaluation</li>
-                            <li>Cost optimization: caching, model routing, distillation</li>
-                            <li>Guardrails: content filtering, PII detection, output validation</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Start with prompting, escalate to fine-tuning only when prompting hits a ceiling."</li>
-                            <li>"The real competitive moat isn't the model — it's your proprietary data, evaluation framework, and domain expertise."</li>
-                            <li>"I recommend a model routing strategy: use smaller, cheaper models for simple tasks; route complex queries to frontier models."</li>
-                            <li>"GenAI is not the solution to every problem. Traditional ML still wins for structured prediction tasks."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="tech-architecture" data-topic="genai-llm" data-label="GenAI & LLM Strategy">
+            <h2>GenAI & LLM Strategy</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Enterprise LLM Options</h3>
+                    <table>
+                        <thead><tr><th>Approach</th><th>Control</th><th>Cost</th><th>Best For</th></tr></thead>
+                        <tbody>
+                            <tr><td>API (GPT-4, Claude)</td><td>Low</td><td>Per-token</td><td>Rapid prototyping</td></tr>
+                            <tr><td>Fine-tuned (hosted)</td><td>Medium</td><td>Moderate</td><td>Domain tasks</td></tr>
+                            <tr><td>Self-hosted OSS</td><td>High</td><td>GPU infra</td><td>Sensitive data</td></tr>
+                            <tr><td>Hybrid routing</td><td>High</td><td>Optimized</td><td>Cost/quality balance</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>Key Considerations</h3>
+                    <ul>
+                        <li>Prompt engineering → Fine-tuning → Pre-training (escalation ladder)</li>
+                        <li>Evaluation: automated benchmarks + human eval</li>
+                        <li>Cost optimization: caching, routing, distillation</li>
+                        <li>Guardrails: content filtering, PII detection, output validation</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Start with prompting, escalate to fine-tuning only when prompting hits a ceiling."</li>
+                        <li>"The real moat isn't the model — it's your data, eval framework, and domain expertise."</li>
+                        <li>"Model routing: smaller models for simple tasks, frontier models for complex queries."</li>
+                        <li>"GenAI isn't the answer to everything. Traditional ML still wins for structured prediction."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="data-strategy">
-                <h3 class="card-title">Data Strategy & Architecture</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Modern Data Stack for AI</h4>
-                        <ul>
-                            <li><strong>Data Lakehouse</strong> — Unified batch + streaming, schema evolution (Delta Lake, Iceberg)</li>
-                            <li><strong>Data Mesh</strong> — Domain-owned data products, federated governance, self-serve platform</li>
-                            <li><strong>Vector Databases</strong> — Embedding storage for RAG (Pinecone, Weaviate, Chroma, pgvector)</li>
-                            <li><strong>Data Quality</strong> — Great Expectations, dbt tests, data contracts, SLAs</li>
-                            <li><strong>Data Cataloging</strong> — Metadata management, lineage tracking, discoverability</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"AI is only as good as the data it's trained on. Data quality is the #1 bottleneck for most AI programs."</li>
-                            <li>"I advocate for data products — each domain owns, documents, and SLAs their data outputs."</li>
-                            <li>"The shift from data warehouse to data lakehouse unlocks both BI and AI workloads on a single platform."</li>
-                            <li>"Data lineage isn't optional at Fortune 10 scale — it's a regulatory and operational necessity."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="tech-architecture" data-topic="data-strategy" data-label="Data Strategy">
+            <h2>Data Strategy & Architecture</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Modern Data Stack for AI</h3>
+                    <ul>
+                        <li><strong>Data Lakehouse</strong> — Unified batch + streaming (Delta Lake, Iceberg)</li>
+                        <li><strong>Data Mesh</strong> — Domain-owned data products, federated governance</li>
+                        <li><strong>Vector DBs</strong> — Embedding storage for RAG (Pinecone, Weaviate, pgvector)</li>
+                        <li><strong>Data Quality</strong> — Great Expectations, dbt tests, data contracts</li>
+                        <li><strong>Cataloging</strong> — Metadata management, lineage tracking</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"AI is only as good as the data. Data quality is the #1 bottleneck."</li>
+                        <li>"I advocate for data products — each domain owns, documents, and SLAs their outputs."</li>
+                        <li>"Data lakehouse unlocks both BI and AI workloads on a single platform."</li>
+                        <li>"Data lineage isn't optional at Fortune 10 scale — it's regulatory necessity."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 3: Business Impact & ROI -->
-        <section class="topic-section" data-section="business-impact">
-            <h2 class="section-title" id="business-impact">
-                <span class="section-icon">📊</span> Business Impact & ROI
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Business Impact & ROI
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="ai-business-cases">
-                <h3 class="card-title">Building AI Business Cases</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Business Case Framework</h4>
-                        <ol>
-                            <li><strong>Problem Statement</strong> — Quantify the pain ($ cost, time waste, error rates)</li>
-                            <li><strong>AI Solution</strong> — What type of model, data requirements, integration points</li>
-                            <li><strong>Value Proposition</strong> — Revenue uplift, cost reduction, risk mitigation, CX improvement</li>
-                            <li><strong>Investment Required</strong> — Team, infrastructure, data, timeline</li>
-                            <li><strong>Risk Assessment</strong> — Technical feasibility, data availability, change management</li>
-                            <li><strong>Success Metrics</strong> — Leading indicators (model performance) + lagging indicators (business KPIs)</li>
-                        </ol>
-                        <h4>Common Fortune 10 AI Use Cases</h4>
-                        <ul>
-                            <li>Customer churn prediction & next-best-action</li>
-                            <li>Supply chain optimization & demand forecasting</li>
-                            <li>Fraud detection & anomaly detection</li>
-                            <li>Intelligent document processing (IDP)</li>
-                            <li>Conversational AI for customer service</li>
-                            <li>Predictive maintenance (IoT + ML)</li>
-                            <li>Internal knowledge management with GenAI</li>
-                            <li>Code generation & developer productivity</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Every AI initiative should start with a business problem, never a technology solution looking for a problem."</li>
-                            <li>"I frame AI investments in terms the CFO cares about: NPV, IRR, payback period, and risk-adjusted returns."</li>
-                            <li>"My first 90 days focus on identifying 2-3 high-impact, low-risk use cases to build momentum and credibility."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="business-impact" data-topic="business-cases" data-label="AI Business Cases">
+            <h2>Building AI Business Cases</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Business Case Framework</h3>
+                    <ol>
+                        <li><strong>Problem</strong> — Quantify the pain ($, time, error rates)</li>
+                        <li><strong>Solution</strong> — Model type, data needs, integration</li>
+                        <li><strong>Value</strong> — Revenue uplift, cost reduction, risk mitigation</li>
+                        <li><strong>Investment</strong> — Team, infra, data, timeline</li>
+                        <li><strong>Risk</strong> — Feasibility, data availability, change mgmt</li>
+                        <li><strong>Metrics</strong> — Leading (model perf) + lagging (business KPIs)</li>
+                    </ol>
+                    <h3>Fortune 10 Use Cases</h3>
+                    <ul>
+                        <li>Churn prediction & next-best-action</li>
+                        <li>Supply chain & demand forecasting</li>
+                        <li>Fraud & anomaly detection</li>
+                        <li>Intelligent document processing</li>
+                        <li>Conversational AI for service</li>
+                        <li>Predictive maintenance (IoT + ML)</li>
+                        <li>Knowledge mgmt with GenAI</li>
+                        <li>Code gen & dev productivity</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Every AI initiative starts with a business problem, never tech looking for a problem."</li>
+                        <li>"I frame AI in CFO language: NPV, IRR, payback period, risk-adjusted returns."</li>
+                        <li>"First 90 days: 2-3 high-impact, low-risk use cases to build momentum."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="roi-frameworks">
-                <h3 class="card-title">ROI Measurement Frameworks</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>AI ROI Calculation</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Component</th><th>Metrics</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>Revenue Impact</strong></td><td>Conversion lift, ARPU increase, new revenue streams, market share</td></tr>
-                                <tr><td><strong>Cost Reduction</strong></td><td>FTE savings, error reduction, process automation, infrastructure optimization</td></tr>
-                                <tr><td><strong>Risk Mitigation</strong></td><td>Fraud prevented, compliance penalties avoided, security incidents reduced</td></tr>
-                                <tr><td><strong>Speed & Agility</strong></td><td>Time-to-decision, cycle time reduction, speed-to-market</td></tr>
-                                <tr><td><strong>Customer Experience</strong></td><td>NPS improvement, resolution time, personalization engagement</td></tr>
-                            </tbody>
-                        </table>
-                        <h4>Portfolio Approach</h4>
-                        <ul>
-                            <li><strong>70%</strong> — Incremental: optimize existing processes (6-12 month payback)</li>
-                            <li><strong>20%</strong> — Adjacent: augment capabilities (12-24 month payback)</li>
-                            <li><strong>10%</strong> — Transformational: new business models (24-36+ month horizon)</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"I manage AI as a portfolio, not individual projects — some bets are safe, some are moonshots."</li>
-                            <li>"If you can't measure it, you can't prove it. Every model needs business KPIs attached from day one."</li>
-                            <li>"The 70/20/10 portfolio allocation ensures we deliver near-term value while investing in long-term transformation."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="business-impact" data-topic="roi-frameworks" data-label="ROI Measurement">
+            <h2>ROI Measurement Frameworks</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>AI ROI Components</h3>
+                    <table>
+                        <thead><tr><th>Component</th><th>Metrics</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Revenue</strong></td><td>Conversion lift, ARPU, new streams</td></tr>
+                            <tr><td><strong>Cost</strong></td><td>FTE savings, error reduction, automation</td></tr>
+                            <tr><td><strong>Risk</strong></td><td>Fraud prevented, penalties avoided</td></tr>
+                            <tr><td><strong>Speed</strong></td><td>Time-to-decision, cycle time</td></tr>
+                            <tr><td><strong>CX</strong></td><td>NPS, resolution time, personalization</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>Portfolio Allocation</h3>
+                    <ul>
+                        <li><strong>70%</strong> — Incremental: optimize existing (6-12mo payback)</li>
+                        <li><strong>20%</strong> — Adjacent: augment capabilities (12-24mo)</li>
+                        <li><strong>10%</strong> — Transformational: new models (24-36mo+)</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"I manage AI as a portfolio — some bets are safe, some are moonshots."</li>
+                        <li>"If you can't measure it, you can't prove it. KPIs from day one."</li>
+                        <li>"70/20/10 ensures near-term value + long-term transformation."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="stakeholder-management">
-                <h3 class="card-title">Stakeholder Management</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Key Stakeholder Communication</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Audience</th><th>They Care About</th><th>How to Frame AI</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>CEO</strong></td><td>Competitive advantage, vision</td><td>AI as strategic differentiator & growth enabler</td></tr>
-                                <tr><td><strong>CFO</strong></td><td>ROI, cost, risk</td><td>NPV, payback period, cost avoidance, risk reduction</td></tr>
-                                <tr><td><strong>CTO/CIO</strong></td><td>Architecture, security, integration</td><td>Platform approach, technical debt reduction, scalability</td></tr>
-                                <tr><td><strong>CHRO</strong></td><td>Workforce impact, culture</td><td>Augmentation not replacement, upskilling, new roles</td></tr>
-                                <tr><td><strong>Board</strong></td><td>Governance, risk, competition</td><td>Responsible AI, peer benchmarking, market positioning</td></tr>
-                                <tr><td><strong>BU Leaders</strong></td><td>Revenue, efficiency, speed</td><td>Use case ROI, process improvement, time savings</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"I tailor the AI narrative to each stakeholder: vision for the CEO, numbers for the CFO, architecture for the CTO."</li>
-                            <li>"Building AI credibility means delivering quick wins first, then earning the right to propose transformational bets."</li>
-                            <li>"I establish AI Steering Committees with cross-functional representation to ensure alignment and shared accountability."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="business-impact" data-topic="stakeholders" data-label="Stakeholder Mgmt">
+            <h2>Stakeholder Management</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Stakeholder Communication</h3>
+                    <table>
+                        <thead><tr><th>Audience</th><th>They Care About</th><th>Frame AI As</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>CEO</strong></td><td>Competitive advantage</td><td>Strategic differentiator</td></tr>
+                            <tr><td><strong>CFO</strong></td><td>ROI, cost, risk</td><td>NPV, payback, cost avoidance</td></tr>
+                            <tr><td><strong>CTO/CIO</strong></td><td>Architecture, security</td><td>Platform, scalability</td></tr>
+                            <tr><td><strong>CHRO</strong></td><td>Workforce, culture</td><td>Augmentation, upskilling</td></tr>
+                            <tr><td><strong>Board</strong></td><td>Governance, risk</td><td>Responsible AI, positioning</td></tr>
+                            <tr><td><strong>BU Leaders</strong></td><td>Revenue, efficiency</td><td>Use case ROI, time savings</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Tailor the narrative: vision for CEO, numbers for CFO, architecture for CTO."</li>
+                        <li>"Quick wins first → earn the right to propose transformational bets."</li>
+                        <li>"AI Steering Committee with cross-functional representation for alignment."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 4: Team & Organization -->
-        <section class="topic-section" data-section="team-org">
-            <h2 class="section-title" id="team-org">
-                <span class="section-icon">👥</span> Team Building & Organization
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Team & Organization
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="ai-team-structure">
-                <h3 class="card-title">AI Team Structure</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Key Roles</h4>
-                        <ul>
-                            <li><strong>Data Scientists</strong> — Model development, experimentation, research</li>
-                            <li><strong>ML Engineers</strong> — Production systems, MLOps, serving infrastructure</li>
-                            <li><strong>Data Engineers</strong> — Pipelines, feature engineering, data quality</li>
-                            <li><strong>AI Product Managers</strong> — Use case prioritization, stakeholder alignment, success metrics</li>
-                            <li><strong>Applied Research Scientists</strong> — Frontier capabilities, novel approaches, papers</li>
-                            <li><strong>AI Ethics / Governance Leads</strong> — Risk assessment, policy, compliance</li>
-                            <li><strong>AI Solutions Architects</strong> — Integration, design patterns, BU enablement</li>
-                        </ul>
-                        <h4>Team Sizing (Fortune 10 Scale)</h4>
-                        <ul>
-                            <li>Central Platform: 30-80 engineers</li>
-                            <li>Embedded per BU: 5-15 data scientists + ML engineers</li>
-                            <li>Research: 5-20 applied researchers</li>
-                            <li>Governance: 3-8 specialists</li>
-                            <li>Ratio guideline: 1 ML Engineer per 2-3 Data Scientists</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"The #1 mistake is hiring data scientists without ML engineers — you get models that never reach production."</li>
-                            <li>"AI product managers are the most undervalued role. They bridge the gap between technical capability and business value."</li>
-                            <li>"I structure teams as squads: data scientist + ML engineer + data engineer + PM, aligned to a business domain."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="team-org" data-topic="team-structure" data-label="AI Team Structure">
+            <h2>AI Team Structure</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Key Roles</h3>
+                    <ul>
+                        <li><strong>Data Scientists</strong> — Model dev, experimentation, research</li>
+                        <li><strong>ML Engineers</strong> — Production systems, MLOps, serving</li>
+                        <li><strong>Data Engineers</strong> — Pipelines, features, data quality</li>
+                        <li><strong>AI Product Managers</strong> — Prioritization, stakeholders, metrics</li>
+                        <li><strong>Applied Research</strong> — Frontier capabilities, novel approaches</li>
+                        <li><strong>AI Ethics/Governance</strong> — Risk, policy, compliance</li>
+                        <li><strong>Solutions Architects</strong> — Integration, design, BU enablement</li>
+                    </ul>
+                    <h3>Fortune 10 Scale</h3>
+                    <ul>
+                        <li>Central Platform: 30-80 engineers</li>
+                        <li>Embedded per BU: 5-15 DS + ML eng</li>
+                        <li>Research: 5-20 applied researchers</li>
+                        <li>Governance: 3-8 specialists</li>
+                        <li>Ratio: 1 ML Eng per 2-3 DS</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"#1 mistake: hiring DS without ML engineers — models never reach production."</li>
+                        <li>"AI PMs are the most undervalued role — bridge between tech and business."</li>
+                        <li>"Squads: DS + ML eng + data eng + PM, aligned to business domain."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="talent-strategy">
-                <h3 class="card-title">Hiring & Talent Strategy</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Talent Acquisition Playbook</h4>
-                        <ul>
-                            <li><strong>Compete on mission, not just money</strong> — Interesting problems, impact at scale, learning culture</li>
-                            <li><strong>Technical brand building</strong> — Open source contributions, tech blog, conference talks</li>
-                            <li><strong>Pipeline diversity</strong> — University partnerships, bootcamp recruiters, internal upskilling</li>
-                            <li><strong>Interview process</strong> — Real-world case studies > LeetCode, collaborative > adversarial</li>
-                            <li><strong>Retention levers</strong> — Career ladders (IC + management tracks), learning budgets, conference attendance</li>
-                        </ul>
-                        <h4>Upskilling Programs</h4>
-                        <ul>
-                            <li>AI literacy training for all employees</li>
-                            <li>Citizen data scientist programs (business analysts → low-code ML)</li>
-                            <li>Advanced ML engineering bootcamps</li>
-                            <li>GenAI prompt engineering workshops</li>
-                            <li>Cross-training: data scientists learning engineering, engineers learning ML</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Top AI talent wants to work on hard problems with real impact — that's our recruiting advantage over pure tech companies."</li>
-                            <li>"I invest heavily in growing talent internally. Not every great ML engineer needs a PhD."</li>
-                            <li>"Diversity in AI teams isn't just ethical — it directly improves model quality and reduces bias blind spots."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="team-org" data-topic="talent" data-label="Hiring & Talent">
+            <h2>Hiring & Talent Strategy</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Talent Acquisition</h3>
+                    <ul>
+                        <li><strong>Mission-driven</strong> — Hard problems, impact at scale, learning culture</li>
+                        <li><strong>Technical brand</strong> — Open source, tech blog, conferences</li>
+                        <li><strong>Pipeline diversity</strong> — Universities, bootcamps, internal upskilling</li>
+                        <li><strong>Better interviews</strong> — Real-world cases > LeetCode</li>
+                        <li><strong>Retention</strong> — Dual career ladders (IC + mgmt), learning budgets</li>
+                    </ul>
+                    <h3>Upskilling</h3>
+                    <ul>
+                        <li>AI literacy for all employees</li>
+                        <li>Citizen data scientist programs</li>
+                        <li>ML engineering bootcamps</li>
+                        <li>GenAI prompt engineering workshops</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Top talent wants hard problems with real impact — our edge over pure tech."</li>
+                        <li>"I grow talent internally. Not every great ML eng needs a PhD."</li>
+                        <li>"Diversity directly improves model quality and reduces bias blind spots."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="culture-change">
-                <h3 class="card-title">Culture & Change Management</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>AI Adoption Framework</h4>
-                        <ol>
-                            <li><strong>Awareness</strong> — What AI can and cannot do (executive education)</li>
-                            <li><strong>Understanding</strong> — How AI applies to their domain (workshops, demos)</li>
-                            <li><strong>Experimentation</strong> — Hands-on pilots with their data (hackathons, sprints)</li>
-                            <li><strong>Adoption</strong> — Integrate into daily workflows (embedded tools, training)</li>
-                            <li><strong>Advocacy</strong> — Champions who evangelize AI within their teams</li>
-                        </ol>
-                        <h4>Resistance Patterns & Responses</h4>
-                        <ul>
-                            <li><strong>"AI will replace my job"</strong> → Frame as augmentation, show examples of elevated roles</li>
-                            <li><strong>"We've always done it this way"</strong> → Start with pain points they already acknowledge</li>
-                            <li><strong>"I don't trust the model"</strong> → Explainability, human-in-the-loop, gradual autonomy</li>
-                            <li><strong>"It's too complex"</strong> → Abstract complexity, deliver simple interfaces</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Technology is 20% of AI transformation. Culture and change management are the other 80%."</li>
-                            <li>"I don't force AI adoption — I create pull by demonstrating undeniable value to skeptics' own workflows."</li>
-                            <li>"AI champions within each BU are my most important force multiplier."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="team-org" data-topic="culture" data-label="Culture & Change">
+            <h2>Culture & Change Management</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>AI Adoption Stages</h3>
+                    <ol>
+                        <li><strong>Awareness</strong> — What AI can/cannot do</li>
+                        <li><strong>Understanding</strong> — How it applies to their domain</li>
+                        <li><strong>Experimentation</strong> — Hands-on pilots</li>
+                        <li><strong>Adoption</strong> — Integrate into workflows</li>
+                        <li><strong>Advocacy</strong> — Champions evangelize</li>
+                    </ol>
+                    <h3>Handling Resistance</h3>
+                    <ul>
+                        <li><strong>"Will replace my job"</strong> → Augmentation, elevated roles</li>
+                        <li><strong>"Always done it this way"</strong> → Start with their pain points</li>
+                        <li><strong>"Don't trust the model"</strong> → Explainability, HITL, gradual autonomy</li>
+                        <li><strong>"Too complex"</strong> → Simple interfaces, abstract complexity</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Tech is 20% of AI transformation. Culture is the other 80%."</li>
+                        <li>"I create pull by demonstrating undeniable value to skeptics' workflows."</li>
+                        <li>"AI champions in each BU are my most important force multiplier."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 5: Leadership & Executive Presence -->
-        <section class="topic-section" data-section="leadership">
-            <h2 class="section-title" id="leadership">
-                <span class="section-icon">🏛️</span> Leadership & Executive Presence
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Leadership
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="first-90-days">
-                <h3 class="card-title">First 90 Days Plan</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>30-60-90 Framework</h4>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <strong>Days 1-30: Listen & Assess</strong>
-                                <ul>
-                                    <li>Stakeholder listening tour (C-suite, BU leaders, data teams)</li>
-                                    <li>Assess AI maturity, technical debt, team capabilities</li>
-                                    <li>Map existing AI initiatives, their ROI, and gaps</li>
-                                    <li>Understand data landscape, governance, and infrastructure</li>
-                                    <li>Identify quick wins and burning platforms</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-item">
-                                <strong>Days 31-60: Strategy & Quick Wins</strong>
-                                <ul>
-                                    <li>Present AI vision and strategic priorities to leadership</li>
-                                    <li>Launch 2-3 high-impact quick wins to build credibility</li>
-                                    <li>Establish AI governance framework</li>
-                                    <li>Begin team assessment and hiring plan</li>
-                                    <li>Define KPIs and measurement framework</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-item">
-                                <strong>Days 61-90: Execute & Scale</strong>
-                                <ul>
-                                    <li>Deliver first quick win results</li>
-                                    <li>Present 12-month AI roadmap with business cases</li>
-                                    <li>Establish AI Steering Committee</li>
-                                    <li>Launch platform modernization if needed</li>
-                                    <li>Build internal AI community of practice</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"My first 30 days are about listening, not prescribing. Every organization's AI journey is unique."</li>
-                            <li>"I balance short-term credibility builders with long-term strategic bets."</li>
-                            <li>"By day 90, the organization should see tangible AI value and a clear path forward."</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" data-topic="executive-communication">
-                <h3 class="card-title">Executive Communication</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Board Presentation Framework</h4>
-                        <ol>
-                            <li><strong>Context</strong> — Industry AI landscape, competitive positioning (2 min)</li>
-                            <li><strong>Progress</strong> — Portfolio status, key wins, metrics dashboard (3 min)</li>
-                            <li><strong>Challenges</strong> — What's at risk, what needs attention (2 min)</li>
-                            <li><strong>Strategy</strong> — Forward-looking priorities and investments (3 min)</li>
-                            <li><strong>Ask</strong> — Specific decisions or approvals needed (2 min)</li>
-                        </ol>
-                        <h4>Communication Principles</h4>
-                        <ul>
-                            <li>Lead with outcomes, not technology</li>
-                            <li>Use analogies to simplify complex concepts</li>
-                            <li>Quantify everything: $, %, time</li>
-                            <li>Be honest about risks and uncertainties</li>
-                            <li>Always have a clear "ask" or "decision point"</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"I never say 'neural network' in a board meeting. I say 'pattern recognition engine that improves with more data.'"</li>
-                            <li>"The board doesn't need to understand transformers — they need to understand competitive risk if we don't invest."</li>
-                            <li>"I present AI updates in the same language as every other business function: revenue, cost, risk, and speed."</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" data-topic="cross-functional">
-                <h3 class="card-title">Cross-Functional Leadership</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Key Partnerships to Build</h4>
-                        <ul>
-                            <li><strong>CTO/CIO Office</strong> — Platform alignment, infrastructure sharing, security</li>
-                            <li><strong>CDO/Data Team</strong> — Data quality, governance, pipeline reliability</li>
-                            <li><strong>Product Teams</strong> — AI feature integration, user research, experimentation</li>
-                            <li><strong>Legal/Compliance</strong> — Regulatory navigation, IP strategy, contract review</li>
-                            <li><strong>Finance</strong> — Budget advocacy, ROI tracking, cost optimization</li>
-                            <li><strong>HR/People</strong> — Talent strategy, org design, workforce transformation</li>
-                        </ul>
-                        <h4>Influence Without Authority</h4>
-                        <ul>
-                            <li>Build trust through delivering on promises consistently</li>
-                            <li>Create mutual wins — align AI goals with each partner's OKRs</li>
-                            <li>Be the easiest team to work with</li>
-                            <li>Share credit generously, take accountability fully</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"AI doesn't succeed in a silo. My success depends on deep partnerships with every function in the organization."</li>
-                            <li>"I make AI everyone's priority by making everyone's priority AI's input."</li>
-                            <li>"The VP of AI role is fundamentally cross-functional. You need credibility in tech, fluency in business, and empathy in people."</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 6: Interview-Specific -->
-        <section class="topic-section" data-section="interview-prep">
-            <h2 class="section-title" id="interview-prep">
-                <span class="section-icon">🎤</span> Interview Frameworks & Questions
-            </h2>
-
-            <div class="card" data-topic="behavioral-star">
-                <h3 class="card-title">Behavioral Questions (STAR Framework)</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>STAR Method</h4>
-                        <ul>
-                            <li><strong>Situation</strong> — Set the context briefly (company, scale, challenge)</li>
-                            <li><strong>Task</strong> — Your specific responsibility and goal</li>
-                            <li><strong>Action</strong> — What YOU did (specific, technical, leadership-oriented)</li>
-                            <li><strong>Result</strong> — Quantified outcome ($ saved, % improved, scale achieved)</li>
-                        </ul>
-                        <h4>Common VP-Level Behavioral Questions</h4>
-                        <ul>
-                            <li>"Tell me about a time you built an AI team from scratch."</li>
-                            <li>"Describe a failed AI project. What went wrong and what did you learn?"</li>
-                            <li>"How have you convinced skeptical executives to invest in AI?"</li>
-                            <li>"Tell me about navigating a significant organizational change."</li>
-                            <li>"Describe your approach to managing underperformers on your team."</li>
-                            <li>"How do you prioritize competing AI initiatives with limited resources?"</li>
-                            <li>"Tell me about a time you had to pivot an AI strategy mid-execution."</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Response Tips</h4>
-                        <ul>
-                            <li>Keep Situation/Task to 20% of the answer, Action/Result to 80%</li>
-                            <li>Always quantify results: "Reduced processing time by 73%, saving $4.2M annually"</li>
-                            <li>Show strategic thinking, not just execution</li>
-                            <li>Demonstrate learning from failures — vulnerability builds trust at VP level</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" data-topic="strategic-scenarios">
-                <h3 class="card-title">Strategic Scenario Questions</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Common Scenarios</h4>
-                        <div class="scenario">
-                            <strong>Scenario 1: "Our CEO just declared we need to be an AI-first company. Where do you start?"</strong>
+        <article class="topic-content" data-section="leadership" data-topic="first-90" data-label="First 90 Days">
+            <h2>First 90 Days Plan</h2>
+            <div class="two-col">
+                <div class="col">
+                    <div class="tl-grid">
+                        <div class="tl-block tl-blue">
+                            <h4>Days 1-30: Listen & Assess</h4>
                             <ul>
-                                <li>Clarify what "AI-first" means — augmenting existing or creating new?</li>
-                                <li>Assess current maturity: data, talent, infrastructure, governance</li>
-                                <li>Identify 3-5 highest-impact use cases aligned to strategic priorities</li>
-                                <li>Build the 30-60-90 plan with quick wins + long-term vision</li>
-                                <li>Establish success metrics and governance framework</li>
+                                <li>Stakeholder listening tour (C-suite, BU, data)</li>
+                                <li>Assess AI maturity, tech debt, team capability</li>
+                                <li>Map existing initiatives, ROI, gaps</li>
+                                <li>Understand data landscape & infra</li>
+                                <li>Identify quick wins & burning platforms</li>
                             </ul>
                         </div>
-                        <div class="scenario">
-                            <strong>Scenario 2: "We've spent $50M on AI with limited ROI. How do you fix this?"</strong>
+                        <div class="tl-block tl-purple">
+                            <h4>Days 31-60: Strategy & Quick Wins</h4>
                             <ul>
-                                <li>Audit the current portfolio: which initiatives are delivering, which aren't</li>
-                                <li>Diagnose root causes: data quality? wrong problems? no productionization? culture?</li>
-                                <li>Kill underperforming projects decisively — sunk cost discipline</li>
-                                <li>Redirect investment to highest-ROI, most production-ready initiatives</li>
-                                <li>Implement rigorous stage-gate process for future investments</li>
+                                <li>Present AI vision to leadership</li>
+                                <li>Launch 2-3 high-impact quick wins</li>
+                                <li>Establish governance framework</li>
+                                <li>Begin team assessment & hiring</li>
+                                <li>Define KPIs & measurement</li>
                             </ul>
                         </div>
-                        <div class="scenario">
-                            <strong>Scenario 3: "Our competitor just launched an AI product that threatens our market share."</strong>
+                        <div class="tl-block tl-green">
+                            <h4>Days 61-90: Execute & Scale</h4>
                             <ul>
-                                <li>Assess the competitive threat objectively — differentiation vs. feature parity</li>
-                                <li>Identify our unique data assets and domain expertise (competitive moat)</li>
-                                <li>Fast-follow on table-stakes features, differentiate on proprietary capabilities</li>
-                                <li>Accelerate go-to-market through partnerships or acquisitions if needed</li>
-                                <li>Turn defense into offense: what AI advantage can we build that they can't replicate?</li>
+                                <li>Deliver first quick win results</li>
+                                <li>Present 12-month roadmap with biz cases</li>
+                                <li>Establish AI Steering Committee</li>
+                                <li>Launch platform modernization</li>
+                                <li>Build AI community of practice</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="card" data-topic="questions-to-ask">
-                <h3 class="card-title">Questions to Ask the Interviewer</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Strategic Questions</h4>
-                        <ul>
-                            <li>"What is the current state of AI maturity across the organization?"</li>
-                            <li>"What does success look like for this role in the first 12 months?"</li>
-                            <li>"How does AI fit into the broader corporate strategy and growth plan?"</li>
-                            <li>"What's the current relationship between AI/data teams and business units?"</li>
-                            <li>"What's the biggest AI challenge the organization is facing right now?"</li>
-                        </ul>
-                        <h4>Organizational Questions</h4>
-                        <ul>
-                            <li>"Who does this role report to, and what's the executive sponsorship for AI?"</li>
-                            <li>"What does the current team look like, and what's the hiring budget?"</li>
-                            <li>"How are AI investments currently funded — centrally or by business units?"</li>
-                            <li>"What's been tried before in AI, and what worked or didn't?"</li>
-                        </ul>
-                        <h4>Culture & Technical Questions</h4>
-                        <ul>
-                            <li>"How receptive is the organization to AI-driven change?"</li>
-                            <li>"What does the current data infrastructure look like?"</li>
-                            <li>"Are there existing AI governance or ethics frameworks in place?"</li>
-                            <li>"What cloud/infrastructure commitments exist?"</li>
-                        </ul>
-                    </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"First 30 days: listen, not prescribe. Every org's AI journey is unique."</li>
+                        <li>"Balance short-term credibility builders with long-term strategic bets."</li>
+                        <li>"By day 90: tangible AI value and a clear path forward."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 7: Industry Trends -->
-        <section class="topic-section" data-section="industry-trends">
-            <h2 class="section-title" id="industry-trends">
-                <span class="section-icon">🔮</span> Industry Trends & Emerging Tech
-            </h2>
-
-            <div class="card" data-topic="current-landscape">
-                <h3 class="card-title">2025-2026 AI Landscape</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Major Trends</h4>
-                        <ul>
-                            <li><strong>Agentic AI</strong> — Autonomous multi-step reasoning, tool use, complex task completion</li>
-                            <li><strong>Multimodal Models</strong> — Text + image + audio + video in unified architectures</li>
-                            <li><strong>Small Language Models (SLMs)</strong> — Efficient, deployable on-device, lower cost</li>
-                            <li><strong>AI Regulation</strong> — EU AI Act enforcement, US executive orders, industry self-regulation</li>
-                            <li><strong>AI Infrastructure Boom</strong> — Custom silicon (TPUs, Trainium), inference optimization, edge AI</li>
-                            <li><strong>Enterprise AI Platforms</strong> — Consolidation around major cloud + Databricks/Snowflake</li>
-                            <li><strong>AI-Native Software</strong> — Applications built AI-first, not AI-added</li>
-                            <li><strong>Synthetic Data</strong> — Model-generated training data, simulation environments</li>
-                        </ul>
-                        <h4>Key Numbers to Know</h4>
-                        <ul>
-                            <li>Global AI market: ~$500B+ (2025), growing 30%+ CAGR</li>
-                            <li>Enterprise AI adoption: ~75% of large enterprises experimenting, ~35% at scale</li>
-                            <li>GenAI enterprise spending: $20B+ annually and accelerating</li>
-                            <li>AI talent shortage: 2M+ unfilled AI/ML positions globally</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"We're in the deployment phase of AI — the winners will be companies that operationalize AI at scale, not those with the best R&D."</li>
-                            <li>"Agentic AI will transform enterprise workflows from 'human-does-with-AI-assist' to 'AI-does-with-human-oversight.'"</li>
-                            <li>"The model layer is commoditizing. The value is shifting to data, application, and orchestration layers."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="leadership" data-topic="exec-comm" data-label="Executive Comms">
+            <h2>Executive Communication</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Board Presentation (12 min)</h3>
+                    <ol>
+                        <li><strong>Context</strong> — Industry landscape, positioning (2 min)</li>
+                        <li><strong>Progress</strong> — Portfolio status, wins, metrics (3 min)</li>
+                        <li><strong>Challenges</strong> — Risks, attention needed (2 min)</li>
+                        <li><strong>Strategy</strong> — Forward priorities & investments (3 min)</li>
+                        <li><strong>Ask</strong> — Specific decisions needed (2 min)</li>
+                    </ol>
+                    <h3>Principles</h3>
+                    <ul>
+                        <li>Lead with outcomes, not technology</li>
+                        <li>Analogies to simplify complex concepts</li>
+                        <li>Quantify everything: $, %, time</li>
+                        <li>Be honest about risks</li>
+                        <li>Always have a clear "ask"</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Never say 'neural network' in a board meeting. Say 'pattern recognition engine.'"</li>
+                        <li>"Board doesn't need to understand transformers — they need to understand competitive risk."</li>
+                        <li>"Present AI like every other function: revenue, cost, risk, speed."</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="competitive-intel">
-                <h3 class="card-title">Fortune 10 AI Competitive Intel</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>What Fortune 10 Companies Are Doing</h4>
-                        <ul>
-                            <li><strong>Walmart</strong> — Supply chain ML, conversational commerce, store automation</li>
-                            <li><strong>Amazon</strong> — AI-native everything, Alexa/AWS AI services, robotics, AGI research</li>
-                            <li><strong>Apple</strong> — On-device AI, Apple Intelligence, privacy-preserving ML</li>
-                            <li><strong>ExxonMobil</strong> — Predictive maintenance, exploration ML, operational optimization</li>
-                            <li><strong>UnitedHealth</strong> — Clinical AI, claims processing, population health analytics</li>
-                            <li><strong>CVS Health</strong> — Pharmacy automation, health prediction, personalized care</li>
-                            <li><strong>Berkshire Hathaway</strong> — Insurance underwriting AI, investment analytics</li>
-                            <li><strong>Alphabet</strong> — DeepMind, Google AI, cloud AI platform, search transformation</li>
-                            <li><strong>McKesson</strong> — Pharmaceutical supply chain AI, drug discovery support</li>
-                            <li><strong>JPMorgan Chase</strong> — Trading AI, fraud detection, LLM research (IndexGPT)</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"I study what peers and competitors are doing with AI — not to copy, but to identify gaps and opportunities."</li>
-                            <li>"The Fortune 10 companies that win with AI will be those that combine massive data assets with world-class AI talent."</li>
-                            <li>"Industry-specific AI is where the real differentiation happens — generic AI is table stakes."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="leadership" data-topic="cross-func" data-label="Cross-Functional">
+            <h2>Cross-Functional Leadership</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Key Partnerships</h3>
+                    <ul>
+                        <li><strong>CTO/CIO</strong> — Platform alignment, infra, security</li>
+                        <li><strong>CDO/Data</strong> — Quality, governance, pipelines</li>
+                        <li><strong>Product</strong> — AI features, experimentation</li>
+                        <li><strong>Legal</strong> — Regulatory, IP, contracts</li>
+                        <li><strong>Finance</strong> — Budget, ROI tracking</li>
+                        <li><strong>HR</strong> — Talent, org design, workforce</li>
+                    </ul>
+                    <h3>Influence Without Authority</h3>
+                    <ul>
+                        <li>Deliver on promises consistently</li>
+                        <li>Create mutual wins — align with partner OKRs</li>
+                        <li>Be the easiest team to work with</li>
+                        <li>Share credit, take accountability</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"AI doesn't succeed in a silo. Deep partnerships with every function."</li>
+                        <li>"Make AI everyone's priority by making everyone's priority AI's input."</li>
+                        <li>"Credibility in tech, fluency in business, empathy in people."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 8: Technical Deep Dives -->
-        <section class="topic-section" data-section="tech-deep-dives">
-            <h2 class="section-title" id="tech-deep-dives">
-                <span class="section-icon">🔬</span> Technical Deep Dives
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Interview Q&A
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="model-evaluation">
-                <h3 class="card-title">Model Evaluation & Monitoring</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Evaluation Metrics by Task</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Task</th><th>Key Metrics</th></tr></thead>
-                            <tbody>
-                                <tr><td>Classification</td><td>Precision, Recall, F1, AUC-ROC, PR-AUC</td></tr>
-                                <tr><td>Regression</td><td>RMSE, MAE, R², MAPE</td></tr>
-                                <tr><td>Ranking</td><td>NDCG, MAP, MRR</td></tr>
-                                <tr><td>NLP/Generation</td><td>BLEU, ROUGE, BERTScore, Human eval</td></tr>
-                                <tr><td>LLM Quality</td><td>Helpfulness, Harmlessness, Honesty (HHH), MMLU, HumanEval</td></tr>
-                                <tr><td>RAG</td><td>Faithfulness, Answer relevancy, Context precision/recall</td></tr>
-                            </tbody>
-                        </table>
-                        <h4>Production Monitoring</h4>
-                        <ul>
-                            <li><strong>Data Drift</strong> — PSI, KS test, feature distribution monitoring</li>
-                            <li><strong>Model Drift</strong> — Performance degradation tracking, concept drift detection</li>
-                            <li><strong>Operational</strong> — Latency (p50/p95/p99), throughput, error rates, GPU utilization</li>
-                            <li><strong>Business</strong> — Downstream KPI correlation, A/B test results</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"Offline metrics get you to production. Online metrics tell you if you should stay there."</li>
-                            <li>"I mandate monitoring dashboards before model deployment — no exceptions."</li>
-                            <li>"For LLMs, human evaluation is irreplaceable. Automated metrics are necessary but not sufficient."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="interview-prep" data-topic="behavioral" data-label="Behavioral (STAR)">
+            <h2>Behavioral Questions — STAR</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>STAR Method</h3>
+                    <ul>
+                        <li><strong>S</strong>ituation — Context (company, scale, challenge)</li>
+                        <li><strong>T</strong>ask — Your responsibility and goal</li>
+                        <li><strong>A</strong>ction — What YOU did (specific, leadership)</li>
+                        <li><strong>R</strong>esult — Quantified outcome ($, %, scale)</li>
+                    </ul>
+                    <h3>Common VP Questions</h3>
+                    <ul>
+                        <li>"Building an AI team from scratch?"</li>
+                        <li>"A failed AI project — what went wrong?"</li>
+                        <li>"Convincing skeptical execs to invest in AI?"</li>
+                        <li>"Navigating significant org change?"</li>
+                        <li>"Managing underperformers?"</li>
+                        <li>"Prioritizing competing initiatives?"</li>
+                        <li>"Pivoting AI strategy mid-execution?"</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Response Tips</h3>
+                    <ul>
+                        <li>S/T = 20% of answer. A/R = 80%.</li>
+                        <li>Always quantify: "73% reduction, $4.2M saved annually"</li>
+                        <li>Show strategic thinking, not just execution</li>
+                        <li>Own failures honestly — builds trust at VP level</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="cost-optimization">
-                <h3 class="card-title">AI Cost Optimization</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Cost Levers</h4>
-                        <ul>
-                            <li><strong>Model Optimization</strong> — Quantization (INT8/INT4), distillation, pruning</li>
-                            <li><strong>Infrastructure</strong> — Spot instances, reserved capacity, right-sizing GPU selection</li>
-                            <li><strong>Inference</strong> — Batching, caching, model routing (small → large), speculative decoding</li>
-                            <li><strong>Training</strong> — Mixed precision, gradient checkpointing, efficient architectures</li>
-                            <li><strong>Data</strong> — Active learning (label less data more effectively), data augmentation</li>
-                            <li><strong>Architecture</strong> — Cascade models, embeddings cache, async processing</li>
-                        </ul>
-                        <h4>LLM Cost Benchmarks</h4>
-                        <ul>
-                            <li>GPT-4 class: $15-30/1M tokens (input), $30-60/1M tokens (output)</li>
-                            <li>GPT-3.5 class: $0.50-1/1M tokens</li>
-                            <li>Self-hosted Llama 70B: ~$2-4/hr (A100 GPU), amortized per token much lower at scale</li>
-                            <li>Break-even: self-hosting typically wins at >100K requests/day</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"AI cost optimization isn't about spending less — it's about spending smarter."</li>
-                            <li>"Model routing alone can cut LLM inference costs by 50-70% without quality degradation."</li>
-                            <li>"I track cost-per-prediction as a primary metric alongside model performance."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="interview-prep" data-topic="scenarios" data-label="Strategic Scenarios">
+            <h2>Strategic Scenario Questions</h2>
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <h4>"CEO declared AI-first. Where do you start?"</h4>
+                    <ul>
+                        <li>Clarify: augmenting existing or creating new?</li>
+                        <li>Assess maturity: data, talent, infra, governance</li>
+                        <li>3-5 highest-impact use cases → strategic priorities</li>
+                        <li>30-60-90 plan: quick wins + long-term vision</li>
+                        <li>Success metrics and governance framework</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h4>"$50M spent on AI, limited ROI. Fix it."</h4>
+                    <ul>
+                        <li>Audit: which initiatives deliver, which don't</li>
+                        <li>Root cause: data? wrong problems? no prod path?</li>
+                        <li>Kill underperformers — sunk cost discipline</li>
+                        <li>Redirect to highest-ROI initiatives</li>
+                        <li>Implement stage-gate for future investments</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h4>"Competitor launched AI product threatening us."</h4>
+                    <ul>
+                        <li>Assess objectively: differentiation vs. parity</li>
+                        <li>Identify data assets & domain moats</li>
+                        <li>Fast-follow table-stakes, differentiate proprietary</li>
+                        <li>Accelerate via partnerships/acquisitions</li>
+                        <li>Offense: build advantage they can't replicate</li>
+                    </ul>
                 </div>
             </div>
+        </article>
 
-            <div class="card" data-topic="security-privacy">
-                <h3 class="card-title">AI Security & Privacy</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>AI Security Threats</h4>
-                        <ul>
-                            <li><strong>Prompt Injection</strong> — Direct/indirect injection attacks on LLMs</li>
-                            <li><strong>Data Poisoning</strong> — Adversarial training data manipulation</li>
-                            <li><strong>Model Extraction</strong> — Stealing model weights through API queries</li>
-                            <li><strong>Membership Inference</strong> — Determining if data was in training set</li>
-                            <li><strong>PII Leakage</strong> — Models memorizing and regurgitating sensitive data</li>
-                        </ul>
-                        <h4>Defense Strategies</h4>
-                        <ul>
-                            <li>Input/output sanitization and validation layers</li>
-                            <li>PII detection and redaction pipelines</li>
-                            <li>Rate limiting and anomaly detection on model APIs</li>
-                            <li>Differential privacy in training</li>
-                            <li>Regular red-teaming and adversarial testing</li>
-                            <li>Data access controls and audit logging</li>
-                        </ul>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"AI security is the next frontier of cybersecurity. Most enterprises haven't even started thinking about it."</li>
-                            <li>"Every LLM deployment needs an input/output security layer — prompt injection is the SQL injection of AI."</li>
-                            <li>"Red-teaming AI systems should be as routine as penetration testing web applications."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="interview-prep" data-topic="ask-them" data-label="Questions to Ask">
+            <h2>Questions to Ask the Interviewer</h2>
+            <div class="three-col">
+                <div class="col">
+                    <h3>Strategic</h3>
+                    <ul>
+                        <li>"Current AI maturity?"</li>
+                        <li>"Success in first 12 months?"</li>
+                        <li>"AI in corporate strategy?"</li>
+                        <li>"AI/data ↔ BU relationship?"</li>
+                        <li>"Biggest AI challenge now?"</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Organizational</h3>
+                    <ul>
+                        <li>"Reporting structure & exec sponsorship?"</li>
+                        <li>"Current team & hiring budget?"</li>
+                        <li>"Central vs. BU-funded AI?"</li>
+                        <li>"What's been tried before?"</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Culture & Tech</h3>
+                    <ul>
+                        <li>"Receptiveness to AI change?"</li>
+                        <li>"Current data infrastructure?"</li>
+                        <li>"AI governance frameworks?"</li>
+                        <li>"Cloud commitments?"</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 9: Metrics & KPIs -->
-        <section class="topic-section" data-section="metrics-kpis">
-            <h2 class="section-title" id="metrics-kpis">
-                <span class="section-icon">📈</span> AI Metrics & KPIs Dashboard
-            </h2>
+        <!-- ══════════════════════════════════════════
+             SECTION: Industry Trends
+             ══════════════════════════════════════════ -->
 
-            <div class="card" data-topic="ai-org-kpis">
-                <h3 class="card-title">AI Organization KPIs</h3>
-                <div class="card-body">
-                    <div class="framework">
-                        <h4>Metrics I Track as VP of AI</h4>
-                        <table class="ref-table">
-                            <thead><tr><th>Category</th><th>Metric</th><th>Target</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>Value Delivery</strong></td><td>AI-attributed revenue / cost savings</td><td>Track quarterly, growing YoY</td></tr>
-                                <tr><td><strong>Production Health</strong></td><td>Models in production</td><td>Growing, with high utilization</td></tr>
-                                <tr><td><strong>Velocity</strong></td><td>Time from ideation to production</td><td>&lt;3 months for standard models</td></tr>
-                                <tr><td><strong>Platform</strong></td><td>Self-service adoption rate</td><td>&gt;70% of new models via platform</td></tr>
-                                <tr><td><strong>Quality</strong></td><td>Model incident rate (drift, failures)</td><td>&lt;2% per quarter</td></tr>
-                                <tr><td><strong>Team</strong></td><td>Team satisfaction & retention</td><td>&gt;85% retention, high eNPS</td></tr>
-                                <tr><td><strong>Adoption</strong></td><td>AI literacy across organization</td><td>&gt;60% employees AI-literate</td></tr>
-                                <tr><td><strong>Governance</strong></td><td>Compliance & audit pass rate</td><td>100%</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="key-phrases">
-                        <h4>Key Phrases</h4>
-                        <ul>
-                            <li>"I run the AI org like a product — with clear KPIs, sprint cadences, and customer (business unit) satisfaction scores."</li>
-                            <li>"The most important metric is time-to-value: how fast can we go from business question to production AI solution?"</li>
-                            <li>"I present an AI Scorecard to leadership monthly — no different from how Sales presents their pipeline review."</li>
-                        </ul>
-                    </div>
+        <article class="topic-content" data-section="industry-trends" data-topic="landscape" data-label="2025-2026 Landscape">
+            <h2>2025-2026 AI Landscape</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Major Trends</h3>
+                    <ul>
+                        <li><strong>Agentic AI</strong> — Autonomous reasoning & tool use</li>
+                        <li><strong>Multimodal</strong> — Text+image+audio+video unified</li>
+                        <li><strong>SLMs</strong> — Efficient, on-device, lower cost</li>
+                        <li><strong>Regulation</strong> — EU AI Act, US executive orders</li>
+                        <li><strong>Infra Boom</strong> — Custom silicon, edge AI</li>
+                        <li><strong>Consolidation</strong> — Cloud + Databricks/Snowflake</li>
+                        <li><strong>AI-Native</strong> — Built AI-first, not AI-added</li>
+                        <li><strong>Synthetic Data</strong> — Model-generated training data</li>
+                    </ul>
+                    <h3>Key Numbers</h3>
+                    <ul>
+                        <li>Global market: ~$500B+, 30%+ CAGR</li>
+                        <li>Adoption: 75% experimenting, 35% at scale</li>
+                        <li>GenAI spend: $20B+ annually</li>
+                        <li>Talent gap: 2M+ unfilled positions</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Deployment phase — winners operationalize at scale, not best R&D."</li>
+                        <li>"Agentic: 'human-does-with-AI' → 'AI-does-with-human-oversight.'"</li>
+                        <li>"Model layer commoditizing. Value → data, application, orchestration."</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </article>
 
-        <!-- Footer -->
-        <footer>
-            <p>XELINTEL — VP of AI Interview Intelligence Reference</p>
-            <p class="footer-sub">Quick Reference: <kbd>Ctrl+K</kbd> Search · <kbd>Esc</kbd> Clear · Click section headers to collapse</p>
-        </footer>
+        <article class="topic-content" data-section="industry-trends" data-topic="f10-intel" data-label="Fortune 10 Intel">
+            <h2>Fortune 10 AI Competitive Intel</h2>
+            <div class="two-col">
+                <div class="col">
+                    <table>
+                        <thead><tr><th>Company</th><th>AI Focus</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Walmart</strong></td><td>Supply chain ML, conversational commerce</td></tr>
+                            <tr><td><strong>Amazon</strong></td><td>AI-native, AWS AI, robotics, AGI</td></tr>
+                            <tr><td><strong>Apple</strong></td><td>On-device AI, Apple Intelligence, privacy ML</td></tr>
+                            <tr><td><strong>ExxonMobil</strong></td><td>Predictive maintenance, exploration ML</td></tr>
+                            <tr><td><strong>UnitedHealth</strong></td><td>Clinical AI, claims, population health</td></tr>
+                            <tr><td><strong>Alphabet</strong></td><td>DeepMind, cloud AI, search transformation</td></tr>
+                            <tr><td><strong>JPMorgan</strong></td><td>Trading AI, fraud, LLM research</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Study peers — not to copy, but to find gaps and opportunities."</li>
+                        <li>"Industry-specific AI = real differentiation. Generic AI = table stakes."</li>
+                        <li>"Winners combine massive data assets with world-class AI talent."</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: Technical Deep Dives
+             ══════════════════════════════════════════ -->
+
+        <article class="topic-content" data-section="tech-deep-dives" data-topic="model-eval" data-label="Model Evaluation">
+            <h2>Model Evaluation & Monitoring</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Metrics by Task</h3>
+                    <table>
+                        <thead><tr><th>Task</th><th>Metrics</th></tr></thead>
+                        <tbody>
+                            <tr><td>Classification</td><td>Precision, Recall, F1, AUC-ROC</td></tr>
+                            <tr><td>Regression</td><td>RMSE, MAE, R², MAPE</td></tr>
+                            <tr><td>Ranking</td><td>NDCG, MAP, MRR</td></tr>
+                            <tr><td>NLP/Gen</td><td>BLEU, ROUGE, BERTScore</td></tr>
+                            <tr><td>LLM</td><td>HHH, MMLU, HumanEval</td></tr>
+                            <tr><td>RAG</td><td>Faithfulness, relevancy, context P/R</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>Production Monitoring</h3>
+                    <ul>
+                        <li><strong>Data Drift</strong> — PSI, KS test</li>
+                        <li><strong>Model Drift</strong> — Performance degradation</li>
+                        <li><strong>Operational</strong> — p50/p95/p99 latency, throughput</li>
+                        <li><strong>Business</strong> — KPI correlation, A/B results</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Offline metrics → production. Online metrics → stay there."</li>
+                        <li>"Monitoring dashboard before deployment — no exceptions."</li>
+                        <li>"For LLMs, human eval is irreplaceable."</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic-content" data-section="tech-deep-dives" data-topic="cost-opt" data-label="Cost Optimization">
+            <h2>AI Cost Optimization</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Cost Levers</h3>
+                    <ul>
+                        <li><strong>Model</strong> — Quantization, distillation, pruning</li>
+                        <li><strong>Infra</strong> — Spot, reserved, GPU right-sizing</li>
+                        <li><strong>Inference</strong> — Batching, caching, routing, speculative decoding</li>
+                        <li><strong>Training</strong> — Mixed precision, gradient checkpointing</li>
+                        <li><strong>Data</strong> — Active learning, augmentation</li>
+                    </ul>
+                    <h3>LLM Cost Benchmarks</h3>
+                    <ul>
+                        <li>GPT-4: $15-30/1M input tokens</li>
+                        <li>GPT-3.5: $0.50-1/1M tokens</li>
+                        <li>Self-hosted 70B: ~$2-4/hr (A100)</li>
+                        <li>Break-even: self-host at >100K req/day</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Not spending less — spending smarter."</li>
+                        <li>"Model routing cuts costs 50-70% without quality loss."</li>
+                        <li>"Cost-per-prediction is a primary metric alongside performance."</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="topic-content" data-section="tech-deep-dives" data-topic="security" data-label="Security & Privacy">
+            <h2>AI Security & Privacy</h2>
+            <div class="two-col">
+                <div class="col">
+                    <h3>Threats</h3>
+                    <ul>
+                        <li><strong>Prompt Injection</strong> — Direct/indirect LLM attacks</li>
+                        <li><strong>Data Poisoning</strong> — Adversarial training data</li>
+                        <li><strong>Model Extraction</strong> — Stealing via API queries</li>
+                        <li><strong>Membership Inference</strong> — Was data in training?</li>
+                        <li><strong>PII Leakage</strong> — Memorizing sensitive data</li>
+                    </ul>
+                    <h3>Defenses</h3>
+                    <ul>
+                        <li>Input/output sanitization</li>
+                        <li>PII detection & redaction</li>
+                        <li>Rate limiting & anomaly detection</li>
+                        <li>Differential privacy</li>
+                        <li>Regular red-teaming</li>
+                    </ul>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"AI security = next frontier of cybersecurity."</li>
+                        <li>"Prompt injection is the SQL injection of AI."</li>
+                        <li>"Red-teaming AI = as routine as pen testing."</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: Metrics & KPIs
+             ══════════════════════════════════════════ -->
+
+        <article class="topic-content" data-section="metrics-kpis" data-topic="org-kpis" data-label="AI Org KPIs">
+            <h2>AI Organization KPIs</h2>
+            <div class="two-col">
+                <div class="col">
+                    <table>
+                        <thead><tr><th>Category</th><th>Metric</th><th>Target</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Value</strong></td><td>AI-attributed revenue/savings</td><td>Growing YoY</td></tr>
+                            <tr><td><strong>Production</strong></td><td>Models in production</td><td>Growing</td></tr>
+                            <tr><td><strong>Velocity</strong></td><td>Ideation → production</td><td>&lt;3 months</td></tr>
+                            <tr><td><strong>Platform</strong></td><td>Self-service adoption</td><td>&gt;70%</td></tr>
+                            <tr><td><strong>Quality</strong></td><td>Incident rate</td><td>&lt;2%/quarter</td></tr>
+                            <tr><td><strong>Team</strong></td><td>Retention</td><td>&gt;85%</td></tr>
+                            <tr><td><strong>Adoption</strong></td><td>AI literacy</td><td>&gt;60%</td></tr>
+                            <tr><td><strong>Governance</strong></td><td>Compliance pass</td><td>100%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col phrases">
+                    <h3>Key Phrases</h3>
+                    <ul>
+                        <li>"Run AI org like a product — KPIs, sprints, customer satisfaction."</li>
+                        <li>"Most important metric: time-to-value."</li>
+                        <li>"Monthly AI Scorecard — same rigor as Sales pipeline review."</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
     </main>
+
+    <!-- Search Results Overlay -->
+    <div id="searchOverlay" class="hidden">
+        <div id="searchResults"></div>
+    </div>
 
     <script src="app.js"></script>
 </body>
