@@ -79,6 +79,7 @@
         if (target) {
             target.classList.add('visible');
             contentPanel.scrollTop = 0;
+            appendQuickNav(target);
         }
     }
 
@@ -199,6 +200,68 @@
     // ── HELPERS ─────────────────────────────────────
     function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
     function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // ── QUICK NAV FOOTER ────────────────────────────
+    function appendQuickNav(article) {
+        // Remove any existing quick-nav in this article
+        const existing = article.querySelector('.quick-nav');
+        if (existing) existing.remove();
+
+        const nav = document.createElement('div');
+        nav.className = 'quick-nav';
+
+        const title = document.createElement('div');
+        title.className = 'quick-nav-title';
+        title.textContent = 'Quick Nav — All Tabs';
+        nav.appendChild(title);
+
+        // Get ordered tab names from the tab bar
+        const tabOrder = [...sectionTabs].map(t => t.dataset.section);
+        const tabLabels = {};
+        sectionTabs.forEach(t => { tabLabels[t.dataset.section] = t.textContent.trim(); });
+
+        tabOrder.forEach(section => {
+            const sectionArticles = document.querySelectorAll(`.topic-content[data-section="${section}"]`);
+            if (sectionArticles.length === 0) return;
+
+            const group = document.createElement('div');
+            group.className = 'quick-nav-group';
+
+            const tabLabel = document.createElement('div');
+            tabLabel.className = 'quick-nav-tab';
+            tabLabel.textContent = tabLabels[section] || section;
+            group.appendChild(tabLabel);
+
+            const links = document.createElement('div');
+            links.className = 'quick-nav-links';
+
+            sectionArticles.forEach(art => {
+                const link = document.createElement('span');
+                link.className = 'quick-nav-link';
+                if (art.dataset.topic === currentTopic) link.classList.add('qn-current');
+                link.textContent = art.dataset.label;
+                link.addEventListener('click', () => {
+                    activateSection(section);
+                    showTopic(art.dataset.topic);
+                    subtopicBar.querySelectorAll('.subtopic-pill').forEach(p => {
+                        p.classList.toggle('active', p.dataset.topic === art.dataset.topic);
+                    });
+                });
+                links.appendChild(link);
+            });
+
+            group.appendChild(links);
+            nav.appendChild(group);
+        });
+
+        // Insert before the phrase-block (so it stays in column 1)
+        const phraseBlock = article.querySelector('.phrase-block');
+        if (phraseBlock) {
+            article.insertBefore(nav, phraseBlock);
+        } else {
+            article.appendChild(nav);
+        }
+    }
 
     // ── GO ──────────────────────────────────────────
     init();
