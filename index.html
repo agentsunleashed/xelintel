@@ -432,67 +432,166 @@
              TAB 5: TECHNICAL
              ═══════════════════════════════════ -->
 
-        <article class="topic-content" data-section="technical" data-topic="tech-arch" data-label="Architecture">
-            <h3 class="section-label">LLM, RAG, Data Foundation</h3>
+        <article class="topic-content" data-section="technical" data-topic="tech-rag" data-label="RAG">
+            <h3 class="section-label">Retrieval Augmented Generation Architecture</h3>
             <ul>
-                <li><strong>Data is the AI substrate</strong> — garbage in, garbage out at enterprise scale</li>
-                <li><strong>RAG over fine-tuning</strong> for most enterprise use cases — retrieval beats hallucination</li>
-                <li><strong>LLM strategy:</strong> Use commercial models for general tasks, fine-tune for domain-specific</li>
-                <li><strong>Data foundation:</strong> Data mesh + data products — federated ownership, centralized governance</li>
-                <li><strong>Vector databases + embedding pipelines</strong> as core infrastructure</li>
-                <li><strong>Platform thinking:</strong> Shared inference, prompt management, evaluation frameworks</li>
+                <li><strong>RAG pipeline:</strong> Index → Chunk → Embeddings → Vector + Semantic search → Grounded response</li>
+                <li><strong>Grounded AI over hallucinated AI</strong> — enterprise GenAI must be anchored in real data</li>
+                <li><strong>Enterprise data as source of truth</strong> — ground LLM responses in internal knowledge bases, not public training data</li>
+                <li><strong>Retrieval before generation</strong> — fetch relevant context first, then generate the answer</li>
+            </ul>
+            <h3 class="section-label">When to Use RAG vs Fine-Tuning</h3>
+            <ul>
+                <li><strong>RAG for dynamic, evolving knowledge</strong> — documents, policies, internal data that changes frequently</li>
+                <li><strong>Fine-tuning for behavioral adaptation</strong> — tone, domain-specific reasoning, specialized formats</li>
+                <li>Most enterprise use cases are <strong>RAG-first</strong> — fine-tuning is the exception, not the default</li>
+            </ul>
+            <h3 class="section-label">Enterprise Deployment & Governance</h3>
+            <ul>
+                <li><strong>Controlled, auditable GenAI</strong> — every response traceable to its source documents</li>
+                <li><strong>Data pipeline basics:</strong> Ingestion, chunking strategy, embedding model selection, index refresh cadence</li>
+                <li><strong>Grounding & evaluation:</strong> Faithfulness scoring, citation accuracy, relevance metrics</li>
+                <li><strong>RAG enables safe enterprise copilots</strong> — the architecture that makes GenAI deployable at scale</li>
+                <li>Security: <strong>data boundary enforcement, access control on retrieval, PII filtering</strong></li>
             </ul>
             <div class="phrase-block">
                 <h4>Key Phrases</h4>
                 <ul>
-                    <li><mark>Data is the AI substrate</mark></li>
-                    <li><mark>Retrieval over hallucination</mark></li>
-                    <li><mark>Platform thinking</mark></li>
+                    <li><mark>Grounded AI over hallucinated AI</mark></li>
+                    <li><mark>Enterprise data as source of truth</mark></li>
+                    <li><mark>Retrieval before generation</mark></li>
+                    <li><mark>Controlled, auditable GenAI</mark></li>
+                    <li><mark>RAG enables safe enterprise copilots</mark></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="topic-content" data-section="technical" data-topic="tech-agents" data-label="Agents">
+            <h3 class="section-label">AI Agents & Multi-Agent Architecture</h3>
+            <ul>
+                <li><strong>Agents extend GenAI into action</strong> — from answering questions to executing multi-step tasks</li>
+                <li>Core capabilities: <strong>tool use, orchestration, memory, planning</strong></li>
+                <li><strong>Multi-agent systems:</strong> Specialized agents collaborate — planner, executor, reviewer, validator</li>
+                <li>Enterprise automation: <strong>process orchestration, document workflows, decision support chains</strong></li>
+            </ul>
+            <h3 class="section-label">Guardrails & Control</h3>
+            <ul>
+                <li><strong>Orchestrated, not autonomous chaos</strong> — every agent operates within defined boundaries</li>
+                <li><strong>Guardrails enable safe automation</strong> — scope limits, approval gates, fallback mechanisms</li>
+                <li><strong>Human-in-the-loop:</strong> Critical decisions require human validation — agents recommend, humans decide</li>
+                <li><strong>Human accountability remains</strong> — AI acts, humans own the outcome</li>
+            </ul>
+            <h3 class="section-label">Enterprise Orchestration</h3>
+            <ul>
+                <li>When agents are useful: <strong>repetitive multi-step tasks, complex research, workflow automation</strong></li>
+                <li>Autonomous vs supervised: <strong>match autonomy level to risk level</strong> — low-risk = higher autonomy</li>
+                <li>Enterprise readiness: <strong>logging, audit trails, cost controls, graceful degradation</strong></li>
+            </ul>
+            <div class="phrase-block">
+                <h4>Key Phrases</h4>
+                <ul>
+                    <li><mark>Agents extend GenAI into action</mark></li>
+                    <li><mark>Orchestrated, not autonomous chaos</mark></li>
+                    <li><mark>Guardrails enable safe automation</mark></li>
+                    <li><mark>Human accountability remains</mark></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="topic-content" data-section="technical" data-topic="tech-copilot" data-label="Copilot">
+            <h3 class="section-label">Enterprise Copilot Architecture</h3>
+            <ul>
+                <li><strong>Copilot is interface to enterprise intelligence</strong> — a natural language layer over organizational knowledge</li>
+                <li><strong>M365 Copilot:</strong> Embedded across Word, Excel, Teams, Outlook — AI in the flow of work</li>
+                <li><strong>Custom Copilots:</strong> Domain-specific copilots built on enterprise data for specialized workflows</li>
+                <li><strong>Copilot Studio / Agent Builder:</strong> Low-code creation of custom agents and copilot extensions</li>
+            </ul>
+            <h3 class="section-label">Security & Data Boundary</h3>
+            <ul>
+                <li><strong>Secure, grounded, enterprise-aware AI</strong> — respects data boundaries, permissions, and compliance</li>
+                <li><strong>Grounding using enterprise data:</strong> Microsoft Graph, SharePoint, internal knowledge bases</li>
+                <li>Data stays within tenant boundary — <strong>no training on customer data</strong></li>
+                <li>Security model: <strong>existing permissions + Copilot = same access, natural language interface</strong></li>
+            </ul>
+            <h3 class="section-label">Adoption & Operationalization</h3>
+            <ul>
+                <li><strong>Embedded in flow of work</strong> — adoption is higher because it's where people already are</li>
+                <li><strong>Augmentation, not replacement</strong> — Copilot amplifies human capability, doesn't replace judgment</li>
+                <li>Operationalize through: <strong>usage analytics, prompt coaching, feedback loops, champion networks</strong></li>
+                <li>Microsoft AI stack: <strong>Azure OpenAI + Copilot + AI Studio + Fabric</strong> — integrated enterprise platform</li>
+            </ul>
+            <div class="phrase-block">
+                <h4>Key Phrases</h4>
+                <ul>
+                    <li><mark>Copilot is interface to enterprise intelligence</mark></li>
+                    <li><mark>Secure, grounded, enterprise-aware AI</mark></li>
+                    <li><mark>Augmentation, not replacement</mark></li>
+                    <li><mark>Embedded in flow of work</mark></li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="topic-content" data-section="technical" data-topic="tech-platform" data-label="Platform">
+            <h3 class="section-label">End-to-End Enterprise AI Architecture</h3>
+            <ul>
+                <li><strong>Platform, not point solutions</strong> — build once, deploy many; avoid per-project silos</li>
+                <li>Architecture stack: <strong>Data platform → Models → Apps → Governance → Monitoring</strong></li>
+                <li><strong>AI factory model:</strong> Centralized platform that produces AI capabilities for the entire enterprise</li>
+                <li><strong>Reusable capabilities compound value</strong> — shared embeddings, common APIs, standard evaluation frameworks</li>
+            </ul>
+            <h3 class="section-label">Data Foundation & Platform Design</h3>
+            <ul>
+                <li><strong>Data foundation is non-negotiable</strong> — AI is only as good as the data it runs on</li>
+                <li>Platform vs project: <strong>projects solve one problem; platforms enable hundreds</strong></li>
+                <li>Data architecture: <strong>lakehouse, feature stores, knowledge graphs, vector stores</strong></li>
+                <li>Design for: <strong>multi-tenancy, self-service, governed access, cost transparency</strong></li>
+            </ul>
+            <h3 class="section-label">Scaling Across Enterprise</h3>
+            <ul>
+                <li><strong>Enterprise-scale architecture</strong> — built for throughput, reliability, and security from day one</li>
+                <li><strong>MLOps / GenAIOps:</strong> Automated pipelines, model registry, deployment orchestration, A/B testing</li>
+                <li>Scale through: <strong>standardization, templates, accelerators, and platform teams</strong></li>
+                <li>Governance built into platform — <strong>not bolted on after the fact</strong></li>
+            </ul>
+            <div class="phrase-block">
+                <h4>Key Phrases</h4>
+                <ul>
+                    <li><mark>Platform, not point solutions</mark></li>
+                    <li><mark>AI factory model</mark></li>
+                    <li><mark>Reusable capabilities compound value</mark></li>
+                    <li><mark>Enterprise-scale architecture</mark></li>
                 </ul>
             </div>
         </article>
 
         <article class="topic-content" data-section="technical" data-topic="tech-lifecycle" data-label="Lifecycle">
-            <h3 class="section-label">POC → Production</h3>
+            <h3 class="section-label">Production Lifecycle & Operations</h3>
             <ul>
-                <li><strong>MLOps maturity:</strong> CI/CD for ML, automated testing, feature stores, model registry</li>
-                <li><strong>Monitoring:</strong> Model drift, data drift, performance degradation, cost tracking</li>
-                <li><strong>Retraining:</strong> Automated triggers, champion-challenger, A/B testing in production</li>
-                <li><strong>Cost management:</strong> GPU optimization, inference cost tracking, cloud spend governance</li>
+                <li><strong>Production-grade AI</strong> — every model in production has an owner, a monitor, and a kill switch</li>
+                <li><strong>Lifecycle ownership:</strong> data → model → deploy → monitor → retrain — end-to-end accountability</li>
+                <li><strong>MLOps + GenAIOps:</strong> CI/CD for ML, automated testing, feature stores, model registry, prompt versioning</li>
+                <li>Build <strong>production pipelines, not notebook prototypes</strong></li>
             </ul>
-            <h3 class="section-label">Reliability at Scale</h3>
+            <h3 class="section-label">Monitoring, Drift & Reliability</h3>
             <ul>
-                <li>Every model has an <strong>owner, a monitor, and a kill switch</strong></li>
-                <li>Build <strong>production-grade AI pipelines</strong>, not notebook prototypes</li>
-                <li>Lifecycle ownership: <strong>data → model → deploy → monitor → retrain</strong></li>
+                <li><strong>Monitor, measure, improve</strong> — model drift, data drift, performance degradation, cost tracking</li>
+                <li><strong>Retraining:</strong> Automated triggers, champion-challenger, A/B testing in production</li>
+                <li>Observability: <strong>latency, accuracy, cost per inference, user satisfaction</strong></li>
                 <li>Production stability = <strong>enterprise trust</strong></li>
             </ul>
-            <div class="phrase-block">
-                <h4>Key Phrases</h4>
-                <ul>
-                    <li><mark>Reliable, scalable AI</mark></li>
-                    <li><mark>Monitoring & retraining</mark></li>
-                    <li><mark>Production stability</mark></li>
-                    <li><mark>Lifecycle ownership</mark></li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="topic-content" data-section="technical" data-topic="tech-innovation" data-label="Innovation">
-            <h3 class="section-label">Evaluating Emerging AI</h3>
+            <h3 class="section-label">Governance & Cost</h3>
             <ul>
-                <li><strong>Separate signal from hype</strong> — not every breakthrough is enterprise-ready</li>
-                <li>Evaluation framework: <strong>maturity, risk, business fit, integration cost</strong></li>
-                <li><strong>Experiment with discipline:</strong> Time-boxed POCs with clear success criteria</li>
-                <li>Maintain a <strong>technology radar</strong> — watch, trial, adopt, hold</li>
-                <li>Build <strong>future-ready architecture</strong> — modular, swappable, vendor-agnostic where possible</li>
+                <li>Governance in lifecycle: <strong>bias checks, compliance gates, audit trails at every stage</strong></li>
+                <li>Performance & cost tradeoffs: <strong>GPU optimization, inference cost tracking, cloud spend governance</strong></li>
+                <li><strong>Sustained value over time</strong> — continuous improvement, not deploy-and-forget</li>
             </ul>
             <div class="phrase-block">
                 <h4>Key Phrases</h4>
                 <ul>
-                    <li><mark>Separate signal from hype</mark></li>
-                    <li><mark>Experiment with discipline</mark></li>
-                    <li><mark>Future-ready architecture</mark></li>
+                    <li><mark>Production-grade AI</mark></li>
+                    <li><mark>Lifecycle ownership</mark></li>
+                    <li><mark>Monitor, measure, improve</mark></li>
+                    <li><mark>Sustained value over time</mark></li>
                 </ul>
             </div>
         </article>
