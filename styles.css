@@ -407,57 +407,6 @@ html, body {
     letter-spacing: 0.5px;
 }
 
-/* ── TECH ARCHITECTURE LAYERS ────────────────────── */
-.arch-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.arch-layer {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    background: rgba(13,17,23,0.9);
-    border-left: 4px solid var(--accent);
-}
-.arch-layer:nth-child(1) { border-left-color: #58a6ff; }
-.arch-layer:nth-child(2) { border-left-color: #3fb950; }
-.arch-layer:nth-child(3) { border-left-color: #d29922; }
-.arch-layer:nth-child(4) { border-left-color: #bc8cff; }
-.arch-layer:nth-child(5) { border-left-color: #f85149; }
-.arch-layer-num {
-    font-size: 18px;
-    font-weight: 800;
-    min-width: 28px;
-    text-align: center;
-}
-.arch-layer:nth-child(1) .arch-layer-num { color: rgba(88,166,255,0.4); }
-.arch-layer:nth-child(2) .arch-layer-num { color: rgba(63,185,80,0.4); }
-.arch-layer:nth-child(3) .arch-layer-num { color: rgba(210,153,34,0.4); }
-.arch-layer:nth-child(4) .arch-layer-num { color: rgba(188,140,255,0.4); }
-.arch-layer:nth-child(5) .arch-layer-num { color: rgba(248,81,73,0.4); }
-.arch-layer-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #c9d1d9;
-    min-width: 110px;
-}
-.arch-layer-subtitle {
-    font-size: 10px;
-    color: #8b949e;
-    font-style: italic;
-}
-.arch-layer-tech {
-    font-size: 10px;
-    color: #58a6ff;
-    margin-left: auto;
-    text-align: right;
-    white-space: nowrap;
-}
-
 /* ── COE DIAGRAMS ─────────────────────────────────── */
 
 /* Governance: tiered cards */
