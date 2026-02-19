@@ -236,6 +236,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return div.innerHTML;
     }
 
+    // ─── Auto-hide header on scroll ─────────────
+    const header = document.getElementById('header');
+    const sectionTabsBar = document.getElementById('sectionTabs');
+    const contentPanel = document.getElementById('contentPanel');
+    let lastScrollTop = 0;
+
+    contentPanel.addEventListener('scroll', () => {
+        const st = contentPanel.scrollTop;
+        if (st > lastScrollTop && st > 30) {
+            // Scrolling down — hide header
+            header.classList.add('hidden-up');
+            sectionTabsBar.classList.add('shift-up');
+            subtopicBar.classList.add('shift-up');
+            contentPanel.classList.add('shift-up');
+        } else {
+            // Scrolling up — show header
+            header.classList.remove('hidden-up');
+            sectionTabsBar.classList.remove('shift-up');
+            subtopicBar.classList.remove('shift-up');
+            contentPanel.classList.remove('shift-up');
+        }
+        lastScrollTop = st;
+    });
+
     // ─── Initialize ────────────────────────────
     switchSection('ai-strategy');
 });

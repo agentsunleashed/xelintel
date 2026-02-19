@@ -75,6 +75,11 @@ body {
     padding: 0 20px;
     z-index: 100;
     backdrop-filter: blur(12px);
+    transition: transform 250ms ease;
+}
+
+#header.hidden-up {
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -134,7 +139,10 @@ body {
     gap: 2px;
     z-index: 99;
     overflow-x: auto;
+    transition: top 250ms ease;
 }
+
+#sectionTabs.shift-up { top: 0; }
 
 .section-tab {
     background: none;
@@ -179,10 +187,13 @@ body {
     display: flex;
     align-items: center;
     padding: 0 16px;
+    transition: top 250ms ease;
     gap: 6px;
     z-index: 98;
     overflow-x: auto;
 }
+
+#subtopicBar.shift-up { top: var(--tabs-h); }
 
 .subtopic-pill {
     background: var(--bg-pill);
@@ -218,6 +229,10 @@ body {
     top: calc(var(--header-h) + var(--tabs-h) + var(--pills-h));
     left: 0; right: 0; bottom: 0;
     overflow-y: auto;
+    transition: top 250ms ease;
+}
+
+#contentPanel.shift-up { top: calc(var(--tabs-h) + var(--pills-h)); }
     padding: 20px 28px;
 }
 
