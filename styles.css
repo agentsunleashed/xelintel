@@ -287,95 +287,15 @@ html, body {
     text-align: center;
 }
 
-/* Vision: pyramid chevron blocks */
-.vision-pyramid {
+/* Vision: SVG pyramid */
+.vision-svg-wrap {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    justify-content: center;
     padding: 10px 0;
 }
-.vision-chevron {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 6px;
-    position: relative;
-    min-height: 44px;
-}
-.vision-chevron::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-}
-.vision-chevron:last-child::after { display: none; }
-.vision-chevron-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-}
-.vision-chevron-desc {
-    font-size: 10px;
-    color: rgba(255,255,255,0.75);
-    margin-top: 2px;
-}
-.vision-chevron:nth-child(1) {
-    width: 50%;
-    background: linear-gradient(135deg, #1a3a5c, #244e7a);
-    border: 1px solid #2d6cb4;
-}
-.vision-chevron:nth-child(1)::after { border-top-color: #244e7a; }
-.vision-chevron:nth-child(2) {
-    width: 60%;
-    background: linear-gradient(135deg, #17395e, #1d4470);
-    border: 1px solid #2560a0;
-}
-.vision-chevron:nth-child(2)::after { border-top-color: #1d4470; }
-.vision-chevron:nth-child(3) {
-    width: 70%;
-    background: linear-gradient(135deg, #142f4e, #193a5e);
-    border: 1px solid #1e5090;
-}
-.vision-chevron:nth-child(3)::after { border-top-color: #193a5e; }
-.vision-chevron:nth-child(4) {
-    width: 80%;
-    background: linear-gradient(135deg, #112841, #15324f);
-    border: 1px solid #184580;
-}
-.vision-chevron:nth-child(4)::after { border-top-color: #15324f; }
-.vision-chevron:nth-child(5) {
-    width: 90%;
-    background: linear-gradient(135deg, #0e2035, #112a42);
-    border: 1px solid #133a6e;
-}
-.vision-connector {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px dashed rgba(88,166,255,0.3);
-    width: 95%;
-}
-.vision-connector-line {
-    flex: 1;
-    height: 1px;
-    background: rgba(88,166,255,0.2);
-}
-.vision-connector-text {
-    font-size: 11px;
-    color: #58a6ff;
-    font-weight: 600;
-    white-space: nowrap;
+.vision-svg-wrap svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Focus: three-column cards */
@@ -492,11 +412,7 @@ html, body {
     .value-timeline { flex-direction: column; }
     .value-timeline::before { display: none; }
     .value-phase { margin: 4px 0; }
-    .vision-chevron:nth-child(1) { width: 60%; }
-    .vision-chevron:nth-child(2) { width: 70%; }
-    .vision-chevron:nth-child(3) { width: 80%; }
-    .vision-chevron:nth-child(4) { width: 90%; }
-    .vision-chevron:nth-child(5) { width: 95%; }
+    .vision-svg-wrap svg { width: 100%; }
 }
 
 /* ── SEARCH OVERLAY ──────────────────────────────── */
