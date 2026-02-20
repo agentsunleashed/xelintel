@@ -1,7 +1,7 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["*.css", "*.js", "*.png", "*.jpg", "*.svg", "*.ico", "*.json"]
+    "exclude": ["*.css", "*.js", "*.html", "*.png", "*.jpg", "*.svg", "*.ico", "*.json"]
   },
   "globalHeaders": {
     "Cache-Control": "public, max-age=3600",

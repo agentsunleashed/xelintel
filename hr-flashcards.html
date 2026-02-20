@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Discussion — Sticky Trigger Cards</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #f8fafc;
+            text-transform: uppercase;
+        }
+
+        header .subtitle {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1e293b 0%, #1a2332 100%);
+            border: 1px solid #334155;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.25rem 1.4rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 0.75rem;
+            right: 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+        }
+
+        .card h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.85rem;
+            padding-right: 2rem;
+            line-height: 1.3;
+        }
+
+        .card ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .card li {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 0.3rem 0.65rem;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            line-height: 1.4;
+            transition: background 0.15s;
+        }
+
+        .card:hover li {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Color accents per card category */
+        .card:nth-child(1)  { --accent: #3b82f6; }
+        .card:nth-child(2)  { --accent: #6366f1; }
+        .card:nth-child(3)  { --accent: #8b5cf6; }
+        .card:nth-child(4)  { --accent: #06b6d4; }
+        .card:nth-child(5)  { --accent: #14b8a6; }
+        .card:nth-child(6)  { --accent: #f59e0b; }
+        .card:nth-child(7)  { --accent: #ef4444; }
+        .card:nth-child(8)  { --accent: #22c55e; }
+        .card:nth-child(9)  { --accent: #ec4899; }
+        .card:nth-child(10) { --accent: #f97316; }
+        .card:nth-child(11) { --accent: #0ea5e9; }
+        .card:nth-child(12) { --accent: #a78bfa; }
+
+        @media print {
+            body { background: #fff; color: #1e293b; padding: 0.5rem; }
+            .card { border-color: #cbd5e1; background: #fff; break-inside: avoid; }
+            .card h2 { color: #0f172a; }
+            .card li { color: #334155; border-color: #e2e8f0; background: #f8fafc; }
+            .card-number { color: #64748b; }
+            header h1 { color: #0f172a; }
+        }
+
+        @media (max-width: 680px) {
+            .grid { grid-template-columns: 1fr; }
+            body { padding: 1rem; }
+            header h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HR Discussion — Sticky Trigger Cards</h1>
+    <div class="subtitle">Quick-reference flash cards · Single page view</div>
+</header>
+
+<div class="grid">
+
+    <!-- 1 -->
+    <div class="card">
+        <span class="card-number">#01</span>
+        <h2>Opening Frame</h2>
+        <ul>
+            <li>Advisory → Ownership</li>
+            <li>Durable enterprise capability</li>
+            <li>Strategy + Execution + Adoption</li>
+            <li>Long-term builder</li>
+            <li>Operational AI at scale</li>
+        </ul>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+        <span class="card-number">#02</span>
+        <h2>Why Leaving Microsoft</h2>
+        <ul>
+            <li>From shaping → owning outcomes</li>
+            <li>End-to-end accountability</li>
+            <li>Sustained impact vs transformation cycle</li>
+            <li>Intentional move</li>
+            <li>Build, not advise</li>
+        </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+        <span class="card-number">#03</span>
+        <h2>Why Cardinal / Industry</h2>
+        <ul>
+            <li>Enterprise scale</li>
+            <li>Operational complexity</li>
+            <li>Healthcare + supply chain impact</li>
+            <li>AI → business capability</li>
+            <li>Embed into core operations</li>
+        </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+        <span class="card-number">#04</span>
+        <h2>Leadership Philosophy</h2>
+        <ul>
+            <li>Clarity and alignment</li>
+            <li>Simplify complexity</li>
+            <li>Influence without authority</li>
+            <li>Strategy + execution together</li>
+            <li>Guardrails enable speed</li>
+            <li>Outcome-oriented leadership</li>
+        </ul>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+        <span class="card-number">#05</span>
+        <h2>People &amp; Team</h2>
+        <ul>
+            <li>Success through team success</li>
+            <li>Goal clarity / role clarity</li>
+            <li>Model – Coach – Care</li>
+            <li>Invest in growth</li>
+            <li>Environment for best work</li>
+            <li>Ownership culture</li>
+        </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+        <span class="card-number">#06</span>
+        <h2>Mixed Performance</h2>
+        <ul>
+            <li>Clear expectations</li>
+            <li>Diagnose root cause</li>
+            <li>Coach vs correct</li>
+            <li>Protect high standards</li>
+            <li>Elevate whole team</li>
+            <li>Accountability + empathy</li>
+        </ul>
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+        <span class="card-number">#07</span>
+        <h2>Difficult Team</h2>
+        <ul>
+            <li>Reset direction</li>
+            <li>Shared outcomes</li>
+            <li>Operating rhythm</li>
+            <li>Trust before speed</li>
+            <li>Remove ambiguity</li>
+            <li>Alignment → execution</li>
+        </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+        <span class="card-number">#08</span>
+        <h2>Driving Change &amp; Adoption</h2>
+        <ul>
+            <li>Adoption by design</li>
+            <li>Early wins → momentum</li>
+            <li>Embed in workflow</li>
+            <li>Business value first</li>
+            <li>Remove friction</li>
+            <li>Governance builds trust</li>
+        </ul>
+    </div>
+
+    <!-- 9 -->
+    <div class="card">
+        <span class="card-number">#09</span>
+        <h2>Handling Resistance</h2>
+        <ul>
+            <li>Understand concern</li>
+            <li>Translate to business impact</li>
+            <li>Start small → prove → scale</li>
+            <li>Address fear / trust gap</li>
+            <li>Align incentives</li>
+            <li>Transparency builds confidence</li>
+        </ul>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+        <span class="card-number">#10</span>
+        <h2>Disagreement (Senior / Board)</h2>
+        <ul>
+            <li>Healthy tension</li>
+            <li>Decision quality</li>
+            <li>Risks / assumptions / trade-offs</li>
+            <li>Options, not position</li>
+            <li>Business over ego</li>
+            <li>Align → execute</li>
+        </ul>
+    </div>
+
+    <!-- 11 -->
+    <div class="card">
+        <span class="card-number">#11</span>
+        <h2>Culture</h2>
+        <ul>
+            <li>Growth mindset</li>
+            <li>Accountability culture</li>
+            <li>Clear expectations</li>
+            <li>Consistent communication</li>
+            <li>Shared ownership</li>
+            <li>Talent thrives in clarity</li>
+        </ul>
+    </div>
+
+    <!-- 12 -->
+    <div class="card">
+        <span class="card-number">#12</span>
+        <h2>Closing Signal</h2>
+        <ul>
+            <li>Enterprise AI execution</li>
+            <li>Platform + adoption + value</li>
+            <li>Durable impact</li>
+            <li>Bridge business and technology</li>
+            <li>Scale with discipline</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
