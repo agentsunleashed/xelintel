@@ -16,7 +16,7 @@
     --accent4:   #f0883e;
     --mark-bg:   rgba(88,166,255,0.12);
     --mark-text: #79c0ff;
-    --tabs-h:    42px;
+    --tabs-h:    30px;
     --pills-h:   38px;
 }
 
@@ -65,13 +65,11 @@ body {
     letter-spacing: 0.6px;
     cursor: pointer;
     white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color .15s, border-color .15s;
+    transition: color .15s;
 }
 .section-tab:hover { color: var(--text); }
 .section-tab.active {
     color: var(--accent);
-    border-bottom-color: var(--accent);
 }
 
 /* ── SEARCH BOX (inline) ────────────────────────── */
