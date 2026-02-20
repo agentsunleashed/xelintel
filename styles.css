@@ -43,30 +43,35 @@ body {
 #sectionTabs {
     position: sticky;
     top: 0; left: 0; right: 0;
+    height: var(--tabs-h);
     min-height: var(--tabs-h);
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2px;
-    padding: 4px 10px;
+    padding: 0 10px;
     z-index: 100;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
 }
+#sectionTabs::-webkit-scrollbar { display: none; }
 
 .section-tab {
     background: transparent;
     color: var(--text-dim);
     border: none;
     padding: 0 14px;
-    height: var(--tabs-h);
+    height: 100%;
     font: 600 11.5px/var(--tabs-h) 'Inter', sans-serif;
     letter-spacing: 0.6px;
     cursor: pointer;
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     transition: color .15s, border-color .15s;
+    flex-shrink: 0;
 }
 .section-tab:hover { color: var(--text); }
 .section-tab.active {
