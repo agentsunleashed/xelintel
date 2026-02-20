@@ -223,6 +223,38 @@ html, body {
 
 /* ── KEY PHRASES BLOCK ───────────────────────────── */
 
+/* ── FULL RESPONSE BLOCK ─────────────────────────── */
+
+.response-block {
+    margin: 8px 0 20px;
+    padding: 14px 18px;
+    background: rgba(88,166,255,0.04);
+    border: 1px solid rgba(88,166,255,0.12);
+    border-left: 3px solid rgba(88,166,255,0.3);
+    border-radius: 8px;
+}
+
+.response-block .response-label {
+    font: 600 11px 'Inter', sans-serif;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.response-block p {
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin: 0 0 10px;
+    opacity: 0.85;
+}
+
+.response-block p:last-child {
+    margin-bottom: 0;
+}
+
 .phrase-block {
     grid-column: 2;
     grid-row: 1 / span 20;
