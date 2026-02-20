@@ -124,8 +124,146 @@
             header h1 { color: #0f172a; }
         }
 
+        /* ── Collapsible sub-section ── */
+        .sub-section {
+            grid-column: 1 / -1;
+            margin: 0.5rem 0;
+        }
+
+        .sub-section-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e3a5f 0%, #1a2744 100%);
+            border: 1px solid #3b82f6;
+            border-left: 4px solid #3b82f6;
+            border-radius: 10px;
+            padding: 0.9rem 1.4rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sub-section-toggle:hover {
+            background: linear-gradient(135deg, #1e3a5f 0%, #253352 100%);
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+        }
+
+        .sub-section-toggle .toggle-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sub-section-toggle .toggle-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #93c5fd;
+            letter-spacing: 0.03em;
+        }
+
+        .sub-section-toggle .toggle-hint {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .sub-section-toggle .toggle-arrow {
+            font-size: 0.9rem;
+            color: #93c5fd;
+            transition: transform 0.25s ease;
+        }
+
+        .sub-section.open .toggle-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sub-section-body {
+            display: none;
+            padding-top: 1.25rem;
+        }
+
+        .sub-section.open .sub-section-body {
+            display: block;
+        }
+
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .sub-grid .card {
+            --accent: #3b82f6;
+        }
+        .sub-grid .card:nth-child(1)  { --accent: #3b82f6; }
+        .sub-grid .card:nth-child(2)  { --accent: #6366f1; }
+        .sub-grid .card:nth-child(3)  { --accent: #8b5cf6; }
+        .sub-grid .card:nth-child(4)  { --accent: #06b6d4; }
+        .sub-grid .card:nth-child(5)  { --accent: #14b8a6; }
+        .sub-grid .card:nth-child(6)  { --accent: #f59e0b; }
+        .sub-grid .card:nth-child(7)  { --accent: #ef4444; }
+        .sub-grid .card:nth-child(8)  { --accent: #22c55e; }
+        .sub-grid .card:nth-child(9)  { --accent: #ec4899; }
+        .sub-grid .card:nth-child(10) { --accent: #f97316; }
+
+        .card .signal {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.85;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ── Tab bar ── */
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.55rem 1.4rem;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: #253352;
+            color: #e2e8f0;
+            border-color: #3b82f6;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1a2744 100%);
+            color: #93c5fd;
+            border-color: #3b82f6;
+            box-shadow: 0 2px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* ── Tab panels ── */
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
         @media (max-width: 680px) {
             .grid { grid-template-columns: 1fr; }
+            .sub-grid { grid-template-columns: 1fr; }
             body { padding: 1rem; }
             header h1 { font-size: 1.3rem; }
         }
@@ -138,6 +276,12 @@
     <div class="subtitle">Quick-reference flash cards · Single page view</div>
 </header>
 
+<div class="tab-bar">
+    <button class="tab-btn active" data-tab="behavioral">Behavioral</button>
+    <button class="tab-btn" data-tab="high-performing-team">High Perf Team</button>
+</div>
+
+<div id="behavioral" class="tab-panel active">
 <div class="grid">
 
     <!-- 1 -->
@@ -305,6 +449,152 @@
     </div>
 
 </div>
+</div><!-- /behavioral -->
+
+<div id="high-performing-team" class="tab-panel">
+<div class="grid">
+
+    <!-- 1 -->
+    <div class="card">
+        <span class="card-number">#01</span>
+        <h2>Start with Mission, Not Org Chart</h2>
+        <ul>
+            <li>Align team to clear enterprise mission tied to business value, not technology</li>
+            <li>Define winning in 12–24 months: impact on operations, cost, growth, decision intelligence</li>
+            <li>Rally around purpose &amp; measurable outcomes, not activity</li>
+        </ul>
+        <span class="signal">Signal: Strategic leader, not operational manager</span>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+        <span class="card-number">#02</span>
+        <h2>Hire for "Builders + Scalers"</h2>
+        <ul>
+            <li><strong>Builders</strong> — innovators, 0→1 creators</li>
+            <li><strong>Scalers</strong> — production, reliability, MLOps, platform thinkers</li>
+            <li><strong>Translators</strong> — bridge business and technology</li>
+            <li>Avoid teams of only researchers or only engineers</li>
+            <li>High performance comes from complementary capability mix</li>
+        </ul>
+        <span class="signal">Signal: Built real AI orgs, not theoretical ones</span>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+        <span class="card-number">#03</span>
+        <h2>Establish Performance Culture Early</h2>
+        <ul>
+            <li>Set a high bar with clarity, not pressure</li>
+            <li>Operating principles: ownership, speed, measurable impact, collaboration</li>
+            <li>Transparency through metrics, dashboards, visible outcomes</li>
+            <li>Reward impact, not effort</li>
+        </ul>
+        <span class="signal">Signal: Executive maturity &amp; culture builder</span>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+        <span class="card-number">#04</span>
+        <h2>Build Leaders, Not Just Team Members</h2>
+        <ul>
+            <li>Identify and develop second-line leaders early</li>
+            <li>Organizations scale only when leadership depth scales</li>
+            <li>Coach on decision-making, stakeholder management, execution discipline</li>
+        </ul>
+        <span class="signal">Signal: You build organizations, not teams</span>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+        <span class="card-number">#05</span>
+        <h2>Create Execution Discipline</h2>
+        <ul>
+            <li>Prioritized portfolio</li>
+            <li>Business-aligned roadmaps</li>
+            <li>Measurable KPIs and ROI</li>
+            <li>Fast decision loops</li>
+            <li>Balance innovation with delivery discipline</li>
+        </ul>
+        <span class="signal">Signal: You deliver results, not just vision</span>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+        <span class="card-number">#06</span>
+        <h2>Build Cross-Functional Trust</h2>
+        <ul>
+            <li>High-performing teams don't operate in isolation</li>
+            <li>Embed deeply with business, IT, and operations</li>
+            <li>Focus on co-creation, not service delivery</li>
+        </ul>
+        <span class="signal">Signal: Enterprise leadership mindset</span>
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+        <span class="card-number">#07</span>
+        <h2>Attract and Retain Top Talent</h2>
+        <ul>
+            <li>Work is meaningful</li>
+            <li>Leadership is strong</li>
+            <li>Impact is visible</li>
+            <li>Growth is real</li>
+            <li>Invest in career paths, learning culture, ownership</li>
+        </ul>
+        <span class="signal">Signal: You keep elite teams engaged</span>
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+        <span class="card-number">#08</span>
+        <h2>Accountability + Psychological Safety</h2>
+        <ul>
+            <li>High performance requires both accountability &amp; safety</li>
+            <li>Safe environment to experiment and learn</li>
+            <li>Encourage calculated risk-taking</li>
+            <li>Maintain production discipline</li>
+        </ul>
+        <span class="signal">Signal: Modern executive leadership</span>
+    </div>
+
+    <!-- 9 -->
+    <div class="card">
+        <span class="card-number">#09</span>
+        <h2>Scale Through Platform Thinking</h2>
+        <ul>
+            <li>Move from project mindset → platform + capability mindset</li>
+            <li>Build reusable assets, accelerators, enterprise standards</li>
+            <li>This is how high-performing teams multiply impact</li>
+        </ul>
+        <span class="signal">Signal: You have scaled organizations before</span>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+        <span class="card-number">#10</span>
+        <h2>Close with Confidence</h2>
+        <ul>
+            <li>"I've built and scaled high-performing AI and technology teams multiple times."</li>
+            <li>Clear mission + strong talent mix + execution discipline + leadership depth</li>
+            <li>Performance becomes a natural outcome, not something you force</li>
+        </ul>
+        <span class="signal">Signal: Proven executive pattern</span>
+    </div>
+
+</div>
+</div><!-- /high-performing-team -->
+
+<script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+    });
+</script>
 
 </body>
 </html>
