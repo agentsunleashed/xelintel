@@ -257,8 +257,6 @@ body {
     align-self: start;
     position: sticky;
     top: 0;
-    max-height: 100vh;
-    overflow-y: auto;
     margin-top: 0;
     padding: 20px 20px 24px;
     background: rgba(88,166,255,0.06);
@@ -266,12 +264,7 @@ body {
     border-radius: 10px;
     border-left: 3px solid var(--accent);
     box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
 }
-.phrase-block::-webkit-scrollbar { width: 4px; }
-.phrase-block::-webkit-scrollbar-track { background: transparent; }
-.phrase-block::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 .phrase-block h4 {
     font: 700 12px 'Inter', sans-serif;
