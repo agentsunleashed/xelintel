@@ -12,6 +12,7 @@
 
     <!-- SECTION TABS -->
     <nav id="sectionTabs">
+        <button class="section-tab" data-section="quicknav">QUICK NAV</button>
         <button class="section-tab active" data-section="intro">PROFILE</button>
         <button class="section-tab" data-section="strategy">EXECUTION</button>
         <button class="section-tab" data-section="behavioral">BEHAVIORAL</button>
@@ -2798,6 +2799,13 @@
             </div>
         </article>
 
+        <!-- ═══════════════════════════════════
+             TAB: QUICK NAV
+             ═══════════════════════════════════ -->
+
+        <article class="topic-content" data-section="quicknav" data-topic="quicknav-main" data-label="Quick Nav">
+        </article>
+
     </main>
 
     <!-- Search Results Overlay -->
@@ -2806,5 +2814,10 @@
     </div>
 
     <script src="app.js"></script>
+
+    <!-- Floating Quick Nav Button -->
+    <button id="floatingNavBtn" title="Quick Nav">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg>
+    </button>
 </body>
 </html>

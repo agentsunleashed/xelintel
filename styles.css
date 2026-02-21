@@ -732,6 +732,31 @@ body {
     background: rgba(88,166,255,0.12);
 }
 
+/* ── FLOATING QUICK NAV BUTTON ────────────────────── */
+#floatingNavBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+    transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+    z-index: 900;
+}
+#floatingNavBtn:hover {
+    opacity: 1;
+    background: var(--surface2);
+    border-color: var(--accent);
+}
+
 @media (max-width: 768px) {
     .section-tab { padding: 0 10px; font-size: 10.5px; }
     .search-box input { width: 100px; }

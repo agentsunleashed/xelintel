@@ -262,7 +262,24 @@
             article.appendChild(nav);
         }
     }
+    // ── FLOATING QUICK NAV BUTTON ───────────────────
+    const floatingBtn = document.getElementById('floatingNavBtn');
+    if (floatingBtn) {
+        floatingBtn.addEventListener('click', () => activateSection('quicknav'));
+    }
+
+    // Hide floating button when already on quicknav tab
+    function updateFloatingBtn() {
+        if (floatingBtn) floatingBtn.style.display = currentSection === 'quicknav' ? 'none' : '';
+    }
+
+    const _origActivate = activateSection;
+    activateSection = function(section) {
+        _origActivate(section);
+        updateFloatingBtn();
+    };
 
     // ── GO ──────────────────────────────────────────
     init();
+    updateFloatingBtn();
 })();
