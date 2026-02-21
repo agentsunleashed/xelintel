@@ -215,8 +215,8 @@
         title.textContent = 'Quick Nav — All Tabs';
         nav.appendChild(title);
 
-        // Get ordered tab names from the tab bar
-        const tabOrder = [...sectionTabs].map(t => t.dataset.section);
+        // Get ordered tab names from the tab bar (exclude quicknav)
+        const tabOrder = [...sectionTabs].filter(t => t.dataset.section !== 'quicknav').map(t => t.dataset.section);
         const tabLabels = {};
         sectionTabs.forEach(t => { tabLabels[t.dataset.section] = t.textContent.trim(); });
 
